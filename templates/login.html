@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div style="display: flex;">
+        <div class="col me-auto d-flex justify-content-center align-items-center" style="flex: 1 1 40%; word-wrap: break-word;">
+            <div class="container-fluid" style="margin: 60px;">
+                <h2 style="font-family: 'Roboto'; font-weight: bold; color: white; margin-bottom: 32px;">
+                    Login
+                </h2>
+                <h4 style="font-family: 'Roboto'; font-weight:200; color: white;">
+                    "The world is a book, and those who do not travel read only one page."
+                </h4>
+                <h4 style="font-family: 'Roboto'; font-weight:300; color: white; margin-bottom: 24px;">
+                    - St. Augustine
+                </h4>
+                <form action="/login" method="POST">
+                    <div class="mb-3">
+                        <!-- <label for="emailidinput" class="form-label" style="color: white;">Email address</label> -->
+                        <input type="email" class="form-control" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID or Username" name="username">
+                        <!-- <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div class="mb-3">
+                        <!-- <label for="passwordinput" class="form-label" style="color: white;">Password</label> -->
+                        <input type="password" class="form-control" id="passwordinput" placeholder="Password" name="password">
+                    </div>
+                    <!-- <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkinput">
+                        <label class="form-check-label" for="checkinput" style="color: white;">Check me out</label>
+                    </div> -->
+                    <div class="form-text" style="color: white; font-family: 'Roboto'; font-weight: 500;">
+                        &nbsp;&nbsp;Don't have an account? <a href="/signup" style="text-decoration: none; color: #ff571a; font-family: 'Roboto'; font-weight: 500;"><strong>&nbsp;Sign Up</strong></a>
+                    </div><br/>
+                    <button type="submit" class="btn" style="background-color: #ff571a; color: white; font-family: 'Roboto'; font-weight: bold; width: 100%;">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="col ms-auto" style="background-image: url('static/img/login-signup-bg-upscaled.png'); background-size: cover; background-position: center; height: calc(100vh - 56px); flex: 1 1 60%;">
+            <!-- <img src="static/img/login-signup-bg.png" style="height: 100vh; width: 55vw; float: right;"> -->
+        </div>
+    </div>
+{% endblock %}
