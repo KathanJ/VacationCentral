@@ -12,6 +12,7 @@ from dbconfig.dbconfig import db
 import json
 from bson import ObjectId
 
+from datetime import datetime
 
 routes_router = APIRouter()
 
@@ -35,6 +36,55 @@ async def post_login(username: Annotated[str, Form()], password: Annotated[str, 
 async def get_signup(request : Request) -> HTMLResponse:
     return templates.TemplateResponse(
         request=request, name="signup.html", context={}
+    )
+
+dummy_post_objs = [
+    {"user" : "Kathan Jani", "img" : "static/img/post_img_2.png", "thread": {"img" : "static/img/vclogo-white.svg", "name" : "t/Thread2"}, "title" : "Statue Of Unity", "desc" : "dummy description 2", "posted_at" : "It's been 84 years...", "tags": ["#Gujarat","#HotelBRGBudgetStay","#SardarPatelZoologicalPark"], "likes": 25, "dislikes": 10, "comments": 12},
+    {"user" : "Harsh Awasthi", "img" : "static/img/post_img_1.png", "thread": {"img" : "static/img/vclogo.svg", "name" : "t/Thread1"}, "title" : "Taj Mahal", "desc" : "dummy description 1", "posted_at" : "A millenium ago...", "tags": ["#Agra","#TajMahalPalaceHotel","#MehtabBagh"], "likes": 100, "dislikes": 50, "comments": 25},
+    {"user" : "Priyanka Javani", "img" : "static/img/post_img_3.png", "thread": {"img" : "static/img/vclogo.svg", "name" : "t/Thread3"}, "title" : "Qutub Minar", "desc" : "dummy description 3", "posted_at" : "??? years ago...", "tags": ["#Delhi","#QutubResidencyHotel","#QutubMinarPark"], "likes": 50, "dislikes": 10, "comments": 4},
+    
+]
+
+dummy_recent_search_objs = [
+    {"img" : "static/img/dummy_search_img_1.jpg", "name" : "Thar Desert", "place" : "Rajasthan & Gujarat"},
+    {"img" : "static/img/dummy_search_img_2.jpg", "name" : "Red Fort", "place" : "Delhi"},
+    {"img" : "static/img/dummy_search_img_3.jpg", "name" : "Golden Temple", "place" : "Punjab"},
+]
+
+now = datetime.now()
+dummy_trending_objs = [
+    {"name" : "Thar Desert", "place" : "Rajasthan & Gujarat", "day" : now.day, "month": now.strftime('%b').upper()},
+    {"name" : "Red Fort", "place" : "Delhi", "day" : now.day, "month": now.strftime('%b').upper()},
+    {"name" : "Golden Temple", "place" : "Punjab", "day" : now.day, "month": now.strftime('%b').upper()},
+]
+
+dummy_followed_threads_objs = [
+    {"img" : "static/img/vclogo.svg", "name" : "t/Thread1"},
+    {"img" : "static/img/vclogo-white.svg", "name" : "t/Thread2"},
+    {"img" : "static/img/vclogo.svg", "name" : "t/Thread3"},
+]
+
+dummy_user_dict = {
+    "username" : "Kathan Jani", "user_id" : "1234567890", "profile_pic" : "static/img/generic_pfp.png",
+    "posts": dummy_post_objs, "recent_searches": dummy_recent_search_objs, "recent_searches_count": len(dummy_recent_search_objs),
+    "trending": dummy_trending_objs, "trending_count": len(dummy_trending_objs), "followed_threads": dummy_followed_threads_objs,
+    "followed_threads_count": len(dummy_followed_threads_objs)
+}
+
+@routes_router.get("/dashboard", response_class=HTMLResponse)
+async def get_dashboard(request : Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request=request, name="dashboard.html", context={
+            "status":True, "user":dummy_user_dict
+        }
+    )
+
+@routes_router.get("/help", response_class=HTMLResponse)
+async def get_help(request : Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request=request, name="help.html", context={
+            "status":True,"user":dummy_user_dict
+        }
     )
 
 #User CRUD Endpoints

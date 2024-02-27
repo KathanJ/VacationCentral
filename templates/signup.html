@@ -9,42 +9,42 @@
         <div class="col ms-auto" style="flex: 1 1 20%;">
             <!-- <img src="static/img/login-signup-bg.png" style="height: 100vh; width: 55vw; float: right;"> -->
         </div>
-        <div class="col me-auto d-flex justify-content-center align-items-center" style="flex: 1 1 60%; word-wrap: break-word; background-color: #262D34;border-radius: 25px; margin-top: 10px; margin-bottom: 10px;">
+        <div class="col me-auto d-flex justify-content-center align-items-center" style="flex: 1 1 60%; word-wrap: break-word; background-color: var(--primary-dark);border-radius: 25px; margin-top: 10px; margin-bottom: 10px;">
             <div class="container-fluid" style="margin: 60px;">
-                <h2 style="font-family: 'Roboto'; font-weight: bold; color: white; margin-bottom: 24px;">
+                <h2 style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); margin-bottom: 24px;">
                     Sign Up
                 </h2>
-                <h4 style="font-family: 'Roboto'; font-weight:200; color: white; margin-bottom: 18px;">
+                <h4 style="font-family: var(--secondary-font-family); font-weight:200; color: var(--primary-light); margin-bottom: 18px;">
                     "The world is a big and wonderful place, and there's so much to see and do. So get out there and explore!"
                 </h4>
-                <!-- <h4 style="font-family: 'Roboto'; font-weight:300; color: white; margin-bottom: 24px;">
+                <!-- <h4 style="font-family: var(--secondary-font-family); font-weight:var(--font-weight-light); color: var(--primary-light); margin-bottom: 24px;">
                     - St. Augustine
                 </h4> -->
                 <form action="/signup" method="POST">
                     <div class="mb-3" style="display: flex;">
-                        <!-- <label for="usernameinput" class="form-label" style="color: white;">Username</label> -->
-                        <input type="text" class="form-control me-3" id="usernameinput" aria-describedby="usernameHelp" placeholder="Username" name="username">
-                        <!-- <div id="usernameHelp" class="form-text" style="color: white;">People can find you by your username.</div> -->
+                        <!-- <label for="usernameinput" class="form-label" style="color: var(--primary-light);">Username</label> -->
+                        <input type="text" class="form-control form-input-custom me-3" id="usernameinput" aria-describedby="usernameHelp" placeholder="Username" name="username">
+                        <!-- <div id="usernameHelp" class="form-text" style="color: var(--primary-light);">People can find you by your username.</div> -->
 
-                        <!-- <label for="fullnameinput" class="form-label" style="color: white;">Full Name</label> -->
-                        <input type="text" class="form-control ms-3" id="fullnameinput" aria-describedby="fullnameHelp" placeholder="Full Name" name="fullname">
-                        <!-- <div id="fullnameHelp" class="form-text" style="color: white;">People can find you by your full name.</div> -->
+                        <!-- <label for="fullnameinput" class="form-label" style="color: var(--primary-light);">Full Name</label> -->
+                        <input type="text" class="form-control form-input-custom ms-3" id="fullnameinput" aria-describedby="fullnameHelp" placeholder="Full Name" name="fullname">
+                        <!-- <div id="fullnameHelp" class="form-text" style="color: var(--primary-light);">People can find you by your full name.</div> -->
                     </div>
                     <div class="mb-3" style="display: flex;">
-                        <!-- <label for="emailidinput" class="form-label" style="color: white;">Email address</label> -->
-                        <input type="email" class="form-control me-3" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID" name="email">
-                        <!-- <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email with anyone else.</div> -->
+                        <!-- <label for="emailidinput" class="form-label" style="color: var(--primary-light);">Email address</label> -->
+                        <input type="email" class="form-control form-input-custom me-3" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID" name="email">
+                        <!-- <div id="emailHelp" class="form-text" style="color: var(--primary-light);">We'll never share your email with anyone else.</div> -->
 
-                        <!-- <label for="contactnoinput" class="form-label" style="color: white;">Email address</label> -->
-                        <input type="number" class="form-control ms-3" id="contactnoinput" placeholder="Contact No" name="contact">
+                        <!-- <label for="contactnoinput" class="form-label" style="color: var(--primary-light);">Email address</label> -->
+                        <input type="number" class="form-control form-input-custom ms-3" id="contactnoinput" placeholder="Contact No" name="contact">
                     </div>
                     <div class="mb-3" style="display: flex;">
-                        <!-- <label for="addressinput" class="form-label" style="color: white;">Date of Birth</label> -->
-                        <textarea class="form-control me-3" style="flex: 1 1 50%;" id="addressinput" rows="3" cols="3" placeholder="Address" name="address"></textarea>
+                        <!-- <label for="addressinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
+                        <textarea class="form-control form-input-custom me-3" style="flex: 1 1 50%;" id="addressinput" rows="3" cols="3" placeholder="Address" name="address"></textarea>
 
                         <div class="ms-3" style="flex: 1 1 50%;">
-                            <!-- <label for="regioninput" class="form-label" style="color: white;">Region</label> -->
-                            <select class="form-control mb-3" id="regioninput" name="region">
+                            <!-- <label for="regioninput" class="form-label" style="color: var(--primary-light);">Region</label> -->
+                            <select class="form-control form-input-custom mb-3" id="regioninput" name="region">
                                 <option value="region" selected disabled>Region</option>
                                 <option value="north america">North America</option>
                                 <option value="south america">South America</option>
@@ -54,37 +54,37 @@
                                 <option value="australia">Australia</option>
                             </select>
 
-                            <!-- <label for="aadharcardinput" class="form-label" style="color: white;">Date of Birth</label> -->
-                            <input type="file" class="form-control mt-3" id="aadharcardinput" placeholder="Aadhar Card" name="aadharcard">
+                            <!-- <label for="aadharcardinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
+                            <input type="file" class="form-control form-input-custom mt-3" id="aadharcardinput" placeholder="Aadhar Card" name="aadharcard">
                         </div>
                         <!-- <fieldset class="form-control ms-3">
                         <div class="container ms-3">
-                            <h5 style="font-family: 'Roboto'; font-weight: bold; color: white; margin-bottom: 32px;">Gender</h5>
+                            <h5 style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); margin-bottom: 32px;">Gender</h5>
 
                             <div class="container" style="display: inline-flex;">
                                 <input type="radio" id="male" name="sex" value="male">
-                                <label for="male" class="form-label text-light" style="font-family: 'Roboto'; font-weight: bold; color: white; margin-bottom: 32px;">Male</label>
+                                <label for="male" class="form-label text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); margin-bottom: 32px;">Male</label>
                                 
                                 <input type="radio" id="female" name="sex" value="female">
-                                <label for="female" class="form-label text-light" style="font-family: 'Roboto'; font-weight: bold; color: white; margin-bottom: 32px;">Female</label>
+                                <label for="female" class="form-label text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); margin-bottom: 32px;">Female</label>
                             </div>
                             
                             <div class="container" style="display: inline-flex;">
                                 <input type="radio" id="other" name="sex" value="other">
-                                <label for="other" class="form-label text-light" style="font-family: 'Roboto'; font-weight: bold; color: white; margin-bottom: 32px;">Other</label>
+                                <label for="other" class="form-label text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); margin-bottom: 32px;">Other</label>
                                 
                                 <input type="radio" id="unspecified" name="sex" value="unspecified">
-                                <label for="unspecified" class="form-label text-light" style="font-family: 'Roboto'; font-weight: bold; color: white; margin-bottom: 32px;">Rather Not Say</label>
+                                <label for="unspecified" class="form-label text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); margin-bottom: 32px;">Rather Not Say</label>
                             </div>
                         </div>
                         </fieldset> -->
                     </div>
                     <div class="mb-3" style="display: flex;">
-                        <!-- <label for="dobinput" class="form-label" style="color: white;">Date of Birth</label> -->
-                        <input type="date" class="form-control me-3" id="dobinput" placeholder="Date of Birth" name="dob">
+                        <!-- <label for="dobinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
+                        <input type="date" class="form-control form-input-custom me-3" id="dobinput" placeholder="Date of Birth" name="dob">
 
-                        <!-- <label for="sexinput" class="form-label" style="color: white;">Sex</label> -->
-                        <select class="form-control ms-3" id="sexinput" name="sex" style="height: min-content">
+                        <!-- <label for="sexinput" class="form-label" style="color: var(--primary-light);">Sex</label> -->
+                        <select class="form-control form-input-custom ms-3" id="sexinput" name="sex" style="height: min-content">
                             <option value="gender" selected disabled>Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -93,20 +93,20 @@
                         </select>
                     </div>
                     <div class="mb-3" style="display: flex;">
-                        <!-- <label for="passwordinput" class="form-label" style="color: white;">Password</label> -->
-                        <input type="password" class="form-control me-3" id="passwordinput" placeholder="Password" name="password">
+                        <!-- <label for="passwordinput" class="form-label" style="color: var(--primary-light);">Password</label> -->
+                        <input type="password" class="form-control form-input-custom me-3" id="passwordinput" placeholder="Password" name="password">
 
-                        <!-- <label for="confirmpasswordinput" class="form-label" style="color: white;">Confirm Password</label> -->
-                        <input type="password" class="form-control ms-3" id="confirmpasswordinput" placeholder="Confirm Password" name="confirmpassword">
+                        <!-- <label for="confirmpasswordinput" class="form-label" style="color: var(--primary-light);">Confirm Password</label> -->
+                        <input type="password" class="form-control form-input-custom ms-3" id="confirmpasswordinput" placeholder="Confirm Password" name="confirmpassword">
                     </div>
                     <!-- <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="checkinput">
-                        <label class="form-check-label" for="checkinput" style="color: white;">Check me out</label>
+                        <label class="form-check-label" for="checkinput" style="color: var(--primary-light);">Check me out</label>
                     </div> -->
-                    <div class="form-text" style="color: white; font-family: 'Roboto'; font-weight: 500;">
-                        &nbsp;&nbsp;Already have an account? <a href="/login" style="text-decoration: none; color: #ff571a; font-family: 'Roboto'; font-weight: 500;"><strong>&nbsp;Login</strong></a>
+                    <div class="form-text" style="color: var(--primary-light); font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium);">
+                        &nbsp;&nbsp;Already have an account? <a class="hlink-custom" href="/login"><strong>&nbsp;Login</strong></a>
                     </div><br/>
-                    <button type="submit" class="btn" style="background-color: #ff571a; color: white; font-family: 'Roboto'; font-weight: bold; width: 100%;">Sign Up</button>
+                    <button type="submit" class="btn btn-orange-custom" style="width: 100% !important;">Sign Up</button>
                 </form>
             </div>
         </div>
