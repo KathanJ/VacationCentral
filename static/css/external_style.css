@@ -1,0 +1,446 @@
+:root {
+    /* Color Variables */
+    --primary-orange: #FF571A;
+    --secondary-orange: #F96E3B;
+    --primary-dark: #262D34;
+    --secondary-dark: #2C353D; 
+    --primary-grey: #858EAD;
+    --primary-light: white;
+    --secondary-light: #C5D0E6;
+    --primary-blue: #0D6EFD;
+    --primary-yellow: #FFC107;
+    --primary-green: #198754;
+
+    /* Font Variables */
+    --primary-font-family: 'Source Sans 3';
+    --secondary-font-family: 'Roboto';
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+}
+
+@property --rounded-pill-menu-custom-bg-color {
+    syntax: '<color>';
+    initial-value: white;
+    inherits: false;
+}
+
+.btn-search-custom:hover {
+    color: var(--primary-light) !important;
+    background-color: var(--primary-dark) !important;
+}
+
+.btn-search-custom:focus {
+    border: 1px solid var(--primary-orange) !important;
+}
+
+.search-input-text-custom {
+    -webkit-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    -moz-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    -o-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    transition: color 0.25s ease-in, background-color 0.25s ease-in !important;
+}
+
+.search-input-text-custom::placeholder {
+    color: var(--primary-grey);
+}
+
+.search-input-text-custom:hover::placeholder, .search-input-text-custom:focus::placeholder {
+    color: var(--primary-light) !important;
+}
+
+.search-input-text-custom:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+.btn-nav-icon-custom {
+    font-size: x-large;
+}
+
+.btn-nav-icon-custom:hover {
+    background-color: var(--primary-orange);
+}
+
+.dropdown-custom {
+    background-color: var(--primary-dark) !important;
+    border: 0.5px solid var(--primary-orange) !important;
+    -webkit-transition: background-color 0.25s ease-in, border 0.25s ease-in !important; 
+    -moz-transition: background-color 0.25s ease-in, border 0.25s ease-in !important; 
+    -o-transition: background-color 0.25s ease-in, border 0.25s ease-in !important; 
+    transition: background-color 0.25s ease-in, border 0.25s ease-in !important;
+}
+
+.dropdown-custom:hover {
+    background-color: var(--primary-orange) !important;
+    border: 0.5px solid var(--primary-light) !important;
+}
+
+.dropdown-menu {
+    border: 1px solid !important;
+    border-color: var(--primary-orange) !important;
+}
+
+.dropdown-item {
+    -webkit-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    -moz-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    -o-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    transition: color 0.25s ease-in, background-color 0.25s ease-in !important;
+}
+
+.dropdown-item:hover, .dropdown-item:active {
+    color: var(--primary-light);
+    background-color: var(--primary-orange) !important;
+}
+
+.dropdown-divider {
+    border-top-color: var(--primary-orange) !important;
+}
+
+.btn-orange-custom {
+    background-color: var(--primary-orange) !important;
+    color: var(--primary-light) !important;
+    font-family: var(--secondary-font-family) !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+
+.hlink-custom {
+    text-decoration: none;
+    color: var(--primary-orange);
+    font-family: var(--secondary-font-family);
+    font-weight: var(--font-weight-medium);
+}
+
+.hlink-custom:hover {
+    color: var(--secondary-orange);
+}
+
+.hlink-text-custom {
+    color: var(--primary-light) !important;
+    -webkit-transition: color 0.1s ease-in !important; 
+    -moz-transition: color 0.1s ease-in !important; 
+    -o-transition: color 0.1s ease-in !important; 
+    transition: color 0.1s ease-in !important;
+}
+
+.hlink-text-custom:hover {
+    color: var(--primary-orange) !important;
+}
+
+.hlink-footer-custom {
+    color: var(--primary-light) !important;
+    -webkit-transition: color 0.1s ease-in !important; 
+    -moz-transition: color 0.1s ease-in !important; 
+    -o-transition: color 0.1s ease-in !important; 
+    transition: color 0.1s ease-in !important;
+}
+
+.hlink-footer-custom:hover {
+    color: var(--secondary-light) !important;
+}
+
+.btn-orange-custom:hover {
+    background-color: var(--secondary-orange) !important;
+}
+
+.btn-interaction-custom {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-light);
+    font-size: large;
+    height: 34px !important;
+    width: 35px !important;
+    border: none !important;
+    /* Just for demonstration purpose, remove later */
+    -webkit-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-interaction-custom:hover {
+    background-color: var(--primary-dark) !important;
+    color: red !important;
+    border: none !important;
+    font-size: small !important;
+}
+
+ /* Just for demonstration purpose, remove later */
+.btn-interaction-custom:active {
+    background-color: var(--primary-dark) !important;
+    color: red !important;
+    border: none !important;
+    margin-bottom: 10px !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-interaction-custom:focus {
+    background-color: var(--primary-dark) !important;
+    color: red !important;
+    border: none !important;
+    font-size: large !important;
+}
+
+.form-input-custom{
+    font-family: var(--secondary-font-family);
+    font-weight: var(--font-weight-normal);
+}
+
+.form-input-custom:focus {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--font-weight-normal);
+    border-color: var(--primary-orange) !important;
+    box-shadow: 0 0 0 0.5px var(--primary-orange), 0 0 0 0.1rem var(--secondary-orange) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-orange) !important;
+    border-color: var(--primary-orange) !important;
+    box-shadow: 0 0 0 0.5px var(--primary-orange), 0 0 0 0.1rem var(--secondary-orange) !important;
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-orange) !important;
+    box-shadow: 0 0 0 0.5px var(--primary-orange), 0 0 0 0.1rem var(--secondary-orange) !important;
+}
+
+.badge-custom {
+    font-family: var(--primary-font-family);
+    font-weight:  var(--font-weight-semi-bold);
+    background-color: var(--secondary-dark);
+    color: var(--secondary-light);
+}
+  
+.badge-custom:hover{
+    border-color: var(--primary-orange);
+}
+
+.rounded-pill-menu-custom {
+    font-family: var(--secondary-font-family);
+    font-weight:var(--font-weight-medium);
+    background: linear-gradient(to right, var(--rounded-pill-menu-custom-bg-color) 50%, var(--primary-light) 50%) !important;
+    -webkit-transition: color 0.25s ease-in, --rounded-pill-menu-custom-bg-color 0.25s ease-in, padding-left 0.25s ease-in !important; 
+    -moz-transition: color 0.25s ease-in, --rounded-pill-menu-custom-bg-color 0.25s ease-in, padding-left 0.25s ease-in !important; 
+    -o-transition: color 0.25s ease-in, --rounded-pill-menu-custom-bg-color 0.25s ease-in, padding-left 0.25s ease-in !important; 
+    transition: color 0.25s ease-in, --rounded-pill-menu-custom-bg-color 0.25s ease-in, padding-left 0.25s ease-in !important;
+}
+  
+.rounded-pill-menu-custom:hover, .rounded-pill-menu-custom:active, .rounded-pill-menu-custom:focus {
+    --rounded-pill-menu-custom-bg-color: var(--primary-orange) !important;
+    color: var(--primary-orange) !important;
+    padding-left: 10% !important;
+}
+
+.card-post-custom {
+    -webkit-transition: background-color 0.25s ease-in !important; 
+    -moz-transition: background-color 0.25s ease-in !important; 
+    -o-transition: background-color 0.25s ease-in !important; 
+    transition: background-color 0.25s ease-in !important;
+}
+
+.card-post-custom:hover {
+    cursor: pointer;
+    background-color: var(--secondary-dark) !important;
+}
+
+.btn-collapse-custom {
+    border: none !important;
+}
+/* .btn-collapse-custom .down-arrow-custom{
+    display:inline-block;
+    transform: rotate(0deg) !important;
+    -webkit-transition: transform 0.25s ease-in !important; 
+    -moz-transition: transform 0.25s ease-in !important; 
+    -o-transition: transform 0.25s ease-in !important; 
+    transition: transform 0.25s ease-in !important;
+}
+
+.btn-collapse-custom:focus .down-arrow-custom{
+    transform: rotate(180deg) !important;
+} */
+.btn-collapse-custom .card-title {
+    color: var(--secondary-light);
+    -webkit-transition: color 0.1s ease-in, padding-top 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, padding-top 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, padding-top 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, padding-top 0.1s ease-out !important;
+}
+
+/* Just for demonstration purpose, remove later
+.down-arrow-custom {
+    color: var(--secondary-light);
+    display:inline-block;
+    -webkit-transition: color 0.1s ease-in, padding-top 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, padding-top 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, padding-top 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, padding-top 0.1s ease-out !important;
+} */
+
+/* Just for demonstration purpose, remove later */
+.btn-collapse-custom:hover .card-title {
+    color: var(--primary-orange) !important;
+}
+
+ /* Just for demonstration purpose, remove later */
+.btn-collapse-custom:active .card-title {
+    color: var(--primary-orange) !important;
+    border: none !important;
+    padding-top: 10px !important;
+}
+
+/* upvote button */
+.btn-upvote-custom {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-light);
+    font-size: medium !important;
+    height: 32px !important;
+    width: 65px !important;
+    border: none !important;
+    /* Just for demonstration purpose, remove later */
+    -webkit-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-upvote-custom:hover {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-orange) !important;
+    border: none !important;
+    font-size: x-small !important;
+}
+
+ /* Just for demonstration purpose, remove later */
+.btn-upvote-custom:active {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-orange) !important;
+    border: none !important;
+    margin-left: 10px !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-upvote-custom:focus {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-orange) !important;
+    border: none !important;
+    font-size: medium !important;
+}
+
+/* downvote button */
+.btn-downvote-custom {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-light);
+    font-size: medium !important;
+    height: 32px !important;
+    width: 65px !important;
+    border: none !important;
+    /* Just for demonstration purpose, remove later */
+    -webkit-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-downvote-custom:hover {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-blue) !important;
+    border: none !important;
+    font-size: x-small !important;
+}
+
+ /* Just for demonstration purpose, remove later */
+.btn-downvote-custom:active {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-blue) !important;
+    border: none !important;
+    margin-left: 10px !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-downvote-custom:focus {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-blue) !important;
+    border: none !important;
+    font-size: medium !important;
+}
+
+/* comment button */
+.btn-comment-custom {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-light);
+    font-size: medium !important;
+    height: 32px !important;
+    width: 65px !important;
+    border: none !important;
+    /* Just for demonstration purpose, remove later */
+    -webkit-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-comment-custom:hover {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-yellow) !important;
+    border: none !important;
+    font-size: x-small !important;
+}
+
+ /* Just for demonstration purpose, remove later */
+.btn-comment-custom:active {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-yellow) !important;
+    border: none !important;
+    margin-left: 10px !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-comment-custom:focus {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-yellow) !important;
+    border: none !important;
+    font-size: medium !important;
+}
+
+/* share button */
+.btn-share-custom {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-light);
+    font-size: medium !important;
+    height: 32px !important;
+    width: 80px !important;
+    border: none !important;
+    /* Just for demonstration purpose, remove later */
+    -webkit-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-left 0.1s ease-out !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-share-custom:hover {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-green) !important;
+    border: none !important;
+    font-size: x-small !important;
+}
+
+ /* Just for demonstration purpose, remove later */
+.btn-share-custom:active {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-green) !important;
+    border: none !important;
+    margin-left: 10px !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-share-custom:focus {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-green) !important;
+    border: none !important;
+    font-size: medium !important;
+}
