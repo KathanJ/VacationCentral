@@ -3,7 +3,8 @@
     --primary-orange: #FF571A;
     --secondary-orange: #F96E3B;
     --primary-dark: #262D34;
-    --secondary-dark: #2C353D; 
+    --secondary-dark: #2C353D;
+    --extra-dark: #212529;
     --primary-grey: #858EAD;
     --primary-light: white;
     --secondary-light: #C5D0E6;
@@ -55,6 +56,12 @@
     background-color: var(--primary-dark) !important;
 }
 
+.input-text-custom {
+    font-family: var(--primary-font-family) !important;
+    font-weight: var(--font-weight-normal) !important;
+    font-optical-sizing: auto !important;
+}
+
 .btn-nav-icon-custom {
     font-size: x-large;
 }
@@ -82,6 +89,11 @@
     border-color: var(--primary-orange) !important;
 }
 
+.dropdown-menu-secondary {
+    border: 1px solid !important;
+    border-color: var(--primary-light) !important;
+}
+
 .dropdown-item {
     -webkit-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
     -moz-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
@@ -94,8 +106,24 @@
     background-color: var(--primary-orange) !important;
 }
 
+.dropdown-item-secondary {
+    -webkit-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    -moz-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    -o-transition: color 0.25s ease-in, background-color 0.25s ease-in !important; 
+    transition: color 0.25s ease-in, background-color 0.25s ease-in !important;
+}
+
+.dropdown-item-secondary:hover, .dropdown-item-secondary:active {
+    color: black;
+    background-color: var(--primary-light) !important;
+}
+
 .dropdown-divider {
     border-top-color: var(--primary-orange) !important;
+}
+
+.dropdown-divider-secondary {
+    border-top-color: var(--primary-light) !important;
 }
 
 .btn-orange-custom {
@@ -142,6 +170,44 @@
 
 .btn-orange-custom:hover {
     background-color: var(--secondary-orange) !important;
+}
+
+.btn-three-dots-custom {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-light);
+    font-size: large;
+    height: 34px !important;
+    width: 35px !important;
+    border: none !important;
+    /* Just for demonstration purpose, remove later */
+    -webkit-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important; 
+    -moz-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important; 
+    -o-transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important; 
+    transition: color 0.1s ease-in, background-color 0.25s ease-in, font-size 0.1s ease-in, margin-bottom 0.1s ease-out !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-three-dots-custom:hover {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-light) !important;
+    border: none !important;
+    font-size: small !important;
+}
+
+ /* Just for demonstration purpose, remove later */
+.btn-three-dots-custom:active {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-light) !important;
+    border: none !important;
+    margin-bottom: 10px !important;
+}
+
+/* Just for demonstration purpose, remove later */
+.btn-three-dots-custom:focus {
+    background-color: var(--primary-dark) !important;
+    color: var(--primary-light) !important;
+    border: none !important;
+    font-size: large !important;
 }
 
 .btn-interaction-custom {
@@ -214,6 +280,29 @@
   
 .badge-custom:hover{
     border-color: var(--primary-orange);
+}
+
+.btn-filter-custom {
+    font-family: var(--primary-font-family) !important;
+    font-weight:  var(--font-weight-semi-bold) !important;
+    background-color: var(--secondary-dark) !important;
+    color: var(--secondary-light) !important;
+}
+  
+.btn-filter-custom:hover{
+    border-color: var(--primary-orange) !important;
+    color: var(--primary-light) !important;
+}
+
+.btn-filter-custom:active{
+    border-color: var(--primary-light) !important;
+    background-color: var(--secondary-orange) !important;
+    color: var(--primary-light) !important;
+}
+
+.btn-filter-custom:focus{
+    background-color: var(--primary-orange) !important;
+    color: var(--primary-light) !important;
 }
 
 .rounded-pill-menu-custom {
@@ -443,4 +532,60 @@
     color: var(--primary-green) !important;
     border: none !important;
     font-size: medium !important;
+}
+
+.active {
+    background-color: var(--primary-orange) !important;
+}
+
+.faq-card-custom > div > p, .faq-card-custom > div > i{
+    font-family: var(--secondary-font-family);
+    font-weight: var(--font-weight-medium);
+    color: var(--secondary-light);
+    -webkit-transition: color 0.1s ease-in, rotate 0.3s ease-in-out !important; 
+    -moz-transition: color 0.1s ease-in, rotate 0.3s ease-in-out !important; 
+    -o-transition: color 0.1s ease-in, rotate 0.3s ease-in-out !important; 
+    transition: color 0.1s ease-in, rotate 0.3s ease-in-out !important;
+}
+.faq-card-custom:hover > div > p, .faq-card-custom:hover > div > i {
+    color: var(--primary-orange);
+}
+
+.faq-card-custom:hover > div > i {
+    rotate: 180deg;
+}
+
+.collapse-text-custom {
+    background-color: var(--extra-dark);
+    border-left: 5px solid var(--primary-orange);
+}
+
+.tab-custom {
+    text-decoration: none;
+    font-family: var(--secondary-font-family);
+    font-weight: var(--font-weight-medium);
+    color: var(--secondary-light);
+    background-color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
+    -webkit-transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in !important; 
+    -moz-transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in  !important; 
+    -o-transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in  !important; 
+    transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in  !important;
+}
+
+.tab-custom:hover {
+    color: var(--primary-light);
+    background-color: var(--primary-orange);
+}
+
+.tab-custom:active {
+    color: var(--primary-light);
+    background-color: var(--primary-orange);
+    border-color: var(--primary-light);
+}
+
+.tab-custom:focus {
+    color: var(--primary-light);
+    background-color: var(--primary-orange);
+    border-color: var(--primary-light);
 }

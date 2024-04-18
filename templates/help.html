@@ -10,33 +10,39 @@
             <h2 class="ms-3 mb-3 text-center" style="font-family: var(--secondary-font-family); color: var(--secondary-light); ">Looking for some help?</h2>
             <form class="d-flex mx-auto w-50" role="search" style="display: inline; width: 100%;" id="searchform">
                 <div class="input-group">
-                  <input class="form-control search-input-text-custom form-input-custom me-auto align-self-center" type="search" id="searchbar" placeholder="Type here to search..." aria-label="Search" aria-describedby="searchbtn" style="height: min-content; border: none; background-color: var(--secondary-dark); font-family: var(--primary-font-family); font-weight: var(--font-weight-light); color: var(--primary-light); font-optical-sizing: auto;">
+                  <input class="form-control search-input-text-custom form-input-custom me-auto align-self-center input-text-custom" type="search" id="searchbar" placeholder="Type here to search..." aria-label="Search" aria-describedby="searchbtn" style="height: min-content; border: none; background-color: var(--secondary-dark); font-family: var(--primary-font-family); font-weight: var(--font-weight-light); color: var(--primary-light); font-optical-sizing: auto;">
                   <button class="btn btn-search-custom me-auto align-self-center input-group-text" id="searchbtn" type="submit" style="height: min-content; width: min-content; background-color: var(--secondary-dark); border: none; color: var(--primary-grey);"><i class="bi bi-search"></i></button>
                 </div>
             </form>
         </div>
         <div class="col mx-auto text-center w-100" style="flex: 1 1 60%; padding: 2%; display: flex;">
-            <div class="card card-post-custom mx-5" data-bs-theme="dark" style="width: 15rem; height:15rem; flex: 1 1 33%;" >
-                <img src="static/img/help_img_faqs.png" class="card-img-top" style="min-height: 50%; min-width: 100%; object-fit: contain;" alt="Help Image FAQs">
-                <div class="card-body">
-                  <h5 class="card-title">FAQs</h5>
-                  <p class="card-text">Check out some Frequently Asked Questions that our travellers often have!</p>
+            <a class="mx-5" href="/faqs" style="text-decoration: none;">
+                <div class="card card-post-custom" data-bs-theme="dark" style="width: 24.39rem; height:15rem; flex: 1 1 33.33%;" >
+                    <img src="{{ url_for('static', path='img/help_img_faqs.png') }}" class="card-img-top" style="min-height: 50%; min-width: 100%; object-fit: contain;" alt="Help Image FAQs">
+                    <div class="card-body">
+                    <h5 class="card-title">FAQs</h5>
+                    <p class="card-text">Check out some Frequently Asked Questions that our travellers often have!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-post-custom mx-5" data-bs-theme="dark" style="width: 15rem; height:15rem; flex: 1 1 33%;" >
-                <img src="static/img/help_img_guidelines.png" class="card-img-top" style="min-height: 50%; min-width: 100%; object-fit: contain;" alt="Help Image Guidelines">
-                <div class="card-body">
-                  <h5 class="card-title">Guidelines</h5>
-                  <p class="card-text">Check out our Guidelines to ensure a safe and awesome trip that satisfies your wanderlust!</p>
+            </a>
+            <a class="mx-5" href="#" style="text-decoration: none;">
+                <div class="card card-post-custom" data-bs-theme="dark" style="width: 24.39rem; height:15rem; flex: 1 1 33.33%;" >
+                    <img src="{{ url_for('static', path='img/help_img_guidelines.png') }}" class="card-img-top" style="min-height: 50%; min-width: 100%; object-fit: contain;" alt="Help Image Guidelines">
+                    <div class="card-body">
+                    <h5 class="card-title">Guidelines</h5>
+                    <p class="card-text">Check out our Guidelines to ensure a safe and awesome trip that satisfies your wanderlust!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-post-custom mx-5" data-bs-theme="dark" style="width: 15rem; height:15rem; flex: 1 1 33%;" >
-                <img src="static/img/help_img_aboutus.png" class="card-img-top" style="min-height: 50%; min-width: 100%; object-fit: contain;" alt="Help Image About Us">
-                <div class="card-body">
-                  <h5 class="card-title">About Us</h5>
-                  <p class="card-text">Here's some info about us, the people behind Vacation Central!</p>
+            </a>
+            <a class="mx-5" href="#" style="text-decoration: none;">
+                <div class="card card-post-custom" data-bs-theme="dark" style="width: 24.39rem; height:15rem; flex: 1 1 33.33%;" >
+                    <img src="{{ url_for('static', path='img/help_img_aboutus.png') }}" class="card-img-top" style="min-height: 50%; min-width: 100%; object-fit: contain;" alt="Help Image About Us">
+                    <div class="card-body">
+                    <h5 class="card-title">About Us</h5>
+                    <p class="card-text">Here's some info about us, the people behind Vacation Central!</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col mx-auto text-center w-100" style="flex: 1 1 20%; padding: 2%;">
             <h2 class="ms-3 mb-3" style="font-family: var(--secondary-font-family); color: var(--secondary-light); ">Can't find what you're looking for?</h2>

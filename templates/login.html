@@ -17,15 +17,15 @@
                 <h4 style="font-family: var(--secondary-font-family); font-weight:var(--font-weight-light); color: var(--primary-light); margin-bottom: 24px;">
                     - St. Augustine
                 </h4>
-                <form action="/login" method="POST">
+                <form action="/dashboard" method="GET">
                     <div class="mb-3">
                         <!-- <label for="emailidinput" class="form-label" style="color: var(--primary-light);">Email address</label> -->
-                        <input type="email" class="form-control form-input-custom" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID or Username" name="username">
+                        <input type="email" class="form-control form-input-custom input-text-custom" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID or Username" name="username">
                         <!-- <div id="emailHelp" class="form-text" style="color: var(--primary-light);">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div class="mb-3">
                         <!-- <label for="passwordinput" class="form-label" style="color: var(--primary-light);">Password</label> -->
-                        <input type="password" class="form-control form-input-custom" id="passwordinput" placeholder="Password" name="password">
+                        <input type="password" class="form-control form-input-custom input-text-custom" id="passwordinput" placeholder="Password" name="password">
                     </div>
                     <div class="mb-3 ms-2 form-check">
                         <input type="checkbox" class="form-check-input" id="checkinput">
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="col ms-auto" style="background-image: url('static/img/login-signup-bg-upscaled.png'); background-size: cover; background-position: center; height: calc(100vh - 56px); flex: 1 1 60%;">
-            <!-- <img src="static/img/login-signup-bg.png" style="height: 100vh; width: 55vw; float: right;"> -->
+            <!-- <img src="{{ url_for('static', path='img/login-signup-bg.png') }}" style="height: 100vh; width: 55vw; float: right;"> -->
         </div>
     </div>
 {% endblock %}

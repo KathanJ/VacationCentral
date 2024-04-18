@@ -7,7 +7,7 @@
 {% block content %}
     <div style="display: flex; background-image: url('static/img/login-signup-bg-upscaled.png'); background-size: cover; background-position: center; height: calc(100vh - 56px);">
         <div class="col ms-auto" style="flex: 1 1 20%;">
-            <!-- <img src="static/img/login-signup-bg.png" style="height: 100vh; width: 55vw; float: right;"> -->
+            <!-- <img src="{{ url_for('static', path='img/login-signup-bg.png') }}" style="height: 100vh; width: 55vw; float: right;"> -->
         </div>
         <div class="col me-auto d-flex justify-content-center align-items-center" style="flex: 1 1 60%; word-wrap: break-word; background-color: var(--primary-dark);border-radius: 25px; margin-top: 10px; margin-bottom: 10px;">
             <div class="container-fluid" style="margin: 60px;">
@@ -20,31 +20,31 @@
                 <!-- <h4 style="font-family: var(--secondary-font-family); font-weight:var(--font-weight-light); color: var(--primary-light); margin-bottom: 24px;">
                     - St. Augustine
                 </h4> -->
-                <form action="/signup" method="POST">
+                <form action="/dashboard" method="GET">
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="usernameinput" class="form-label" style="color: var(--primary-light);">Username</label> -->
-                        <input type="text" class="form-control form-input-custom me-3" id="usernameinput" aria-describedby="usernameHelp" placeholder="Username" name="username">
+                        <input type="text" class="form-control form-input-custom me-3 input-text-custom" id="usernameinput" aria-describedby="usernameHelp" placeholder="Username" name="username">
                         <!-- <div id="usernameHelp" class="form-text" style="color: var(--primary-light);">People can find you by your username.</div> -->
 
                         <!-- <label for="fullnameinput" class="form-label" style="color: var(--primary-light);">Full Name</label> -->
-                        <input type="text" class="form-control form-input-custom ms-3" id="fullnameinput" aria-describedby="fullnameHelp" placeholder="Full Name" name="fullname">
+                        <input type="text" class="form-control form-input-custom ms-3 input-text-custom" id="fullnameinput" aria-describedby="fullnameHelp" placeholder="Full Name" name="fullname">
                         <!-- <div id="fullnameHelp" class="form-text" style="color: var(--primary-light);">People can find you by your full name.</div> -->
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="emailidinput" class="form-label" style="color: var(--primary-light);">Email address</label> -->
-                        <input type="email" class="form-control form-input-custom me-3" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID" name="email">
+                        <input type="email" class="form-control form-input-custom me-3 input-text-custom" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID" name="email">
                         <!-- <div id="emailHelp" class="form-text" style="color: var(--primary-light);">We'll never share your email with anyone else.</div> -->
 
                         <!-- <label for="contactnoinput" class="form-label" style="color: var(--primary-light);">Email address</label> -->
-                        <input type="number" class="form-control form-input-custom ms-3" id="contactnoinput" placeholder="Contact No" name="contact">
+                        <input type="number" class="form-control form-input-custom ms-3 input-text-custom" id="contactnoinput" placeholder="Contact No" name="contact">
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="addressinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
-                        <textarea class="form-control form-input-custom me-3" style="flex: 1 1 50%;" id="addressinput" rows="3" cols="3" placeholder="Address" name="address"></textarea>
+                        <textarea class="form-control form-input-custom me-3 input-text-custom" style="flex: 1 1 50%;" id="addressinput" rows="3" cols="3" placeholder="Address" name="address"></textarea>
 
                         <div class="ms-3" style="flex: 1 1 50%;">
                             <!-- <label for="regioninput" class="form-label" style="color: var(--primary-light);">Region</label> -->
-                            <select class="form-control form-input-custom mb-3" id="regioninput" name="region">
+                            <select class="form-control form-input-custom mb-3 input-text-custom" id="regioninput" name="region">
                                 <option value="region" selected disabled>Region</option>
                                 <option value="north america">North America</option>
                                 <option value="south america">South America</option>
@@ -55,7 +55,7 @@
                             </select>
 
                             <!-- <label for="aadharcardinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
-                            <input type="file" class="form-control form-input-custom mt-3" id="aadharcardinput" placeholder="Aadhar Card" name="aadharcard">
+                            <input type="file" class="form-control form-input-custom mt-3 input-text-custom" id="aadharcardinput" placeholder="Aadhar Card" name="aadharcard">
                         </div>
                         <!-- <fieldset class="form-control ms-3">
                         <div class="container ms-3">
@@ -81,10 +81,10 @@
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="dobinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
-                        <input type="date" class="form-control form-input-custom me-3" id="dobinput" placeholder="Date of Birth" name="dob">
+                        <input type="date" class="form-control form-input-custom me-3 input-text-custom" id="dobinput" placeholder="Date of Birth" name="dob">
 
                         <!-- <label for="sexinput" class="form-label" style="color: var(--primary-light);">Sex</label> -->
-                        <select class="form-control form-input-custom ms-3" id="sexinput" name="sex" style="height: min-content">
+                        <select class="form-control form-input-custom ms-3 input-text-custom" id="sexinput" name="sex" style="height: min-content">
                             <option value="gender" selected disabled>Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -94,10 +94,10 @@
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="passwordinput" class="form-label" style="color: var(--primary-light);">Password</label> -->
-                        <input type="password" class="form-control form-input-custom me-3" id="passwordinput" placeholder="Password" name="password">
+                        <input type="password" class="form-control form-input-custom me-3 input-text-custom" id="passwordinput" placeholder="Password" name="password">
 
                         <!-- <label for="confirmpasswordinput" class="form-label" style="color: var(--primary-light);">Confirm Password</label> -->
-                        <input type="password" class="form-control form-input-custom ms-3" id="confirmpasswordinput" placeholder="Confirm Password" name="confirmpassword">
+                        <input type="password" class="form-control form-input-custom ms-3 input-text-custom" id="confirmpasswordinput" placeholder="Confirm Password" name="confirmpassword">
                     </div>
                     <!-- <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="checkinput">
@@ -111,7 +111,7 @@
             </div>
         </div>
         <div class="col ms-auto" style="flex: 1 1 20%;">
-            <!-- <img src="static/img/login-signup-bg.png" style="height: 100vh; width: 55vw; float: right;"> -->
+            <!-- <img src="{{ url_for('static', path='img/login-signup-bg.png') }}" style="height: 100vh; width: 55vw; float: right;"> -->
         </div>
     </div>
 {% endblock %}

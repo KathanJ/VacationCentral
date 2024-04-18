@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Vacation Central
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid" style="display: flex; background-image: url('static/img/homebg-upscaled.png'); background-size: cover; background-position: center; height: calc(100vh - 56px);">
+        <div class="container-fluid mt-5 mx-5">
+            <h1 class="mt-5 mb-4 w-50" style="font-family: var(--primary-font-family); font-weight: bold; font-size: 3.5rem;">
+                "From wanderer <br/>
+                &nbsp;&nbsp;&nbsp;to explorer....!!<br/>
+                - let's journey together."
+            </h1>
+            <a href="/login" class="btn btn-lg rounded-pill btn-orange-custom mt-4 ms-5" style="height:3.5rem; width: 12rem; align-content: center;">Get Started&nbsp;&nbsp;<i class="bi bi-caret-right-fill"></i></a>
+        </div>
+    </div>
+
+    <div class="card mx-5 mt-5 mb-5" data-bs-theme="dark" style="background-color: var(--primary-dark) !important; border: none;">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title mb-5" style="font-family: var(--primary-font-family); color: var(--primary-light); font-weight: var(--font-weight-semi-bold); font-size: 2.75rem; border-bottom: 1px solid var(--primary-light);">Why Vacation Central?</h2>
+                <p class="card-text" style="font-family: var(--secondary-font-family); color: var(--primary-light); font-weight: var(--font-weight-light); font-size: 1.25rem;">
+                    Established in 2022, VacationCentral has since positioned itself as one of the leading companies,
+                    providing great offers, much more activities, exclusive discounts, and a seamless online booking experience
+                    to many of its customers.
+                </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="{{ url_for('static', path='img/home_stuff_img_1.png') }}" alt="Why Vacation Central? Image" class="img-fluid rounded" style="height:250px;  min-width: 100%; object-fit: contain;">
+          </div>
+        </div>
+    </div>
+
+    <div class="card mx-5 mt-5 mb-5" data-bs-theme="dark" style="background-color: var(--primary-dark) !important; border: none;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ url_for('static', path='img/home_stuff_img_2.png') }}" alt="About The Site Image" class="img-fluid rounded" style="height:200px; min-width: 100%; object-fit: contain;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title mb-5" style="font-family: var(--primary-font-family); color: var(--primary-light); font-weight: var(--font-weight-semi-bold); font-size: 2.75rem; border-bottom: 1px solid var(--primary-light);">About the Site</h2>
+                <p class="card-text" style="font-family: var(--secondary-font-family); color: var(--primary-light); font-weight: var(--font-weight-light); font-size: 1.25rem;">
+                    Customer Support, Payment Security, Privacy Policy, Cookie Policy, User Agreement, Terms of Service,<br/>
+                    More Offices, Make A Payment, Work From Home, Report Security Issues
+                </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="card mx-5 mt-5 mb-5" data-bs-theme="dark" style="background-color: var(--primary-dark) !important; border: none;">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title mb-5" style="font-family: var(--primary-font-family); color: var(--primary-light); font-weight: var(--font-weight-semi-bold); font-size: 2.75rem; border-bottom: 1px solid var(--primary-light);">Offline Access</h2>
+                <p class="card-text" style="font-family: var(--secondary-font-family); color: var(--primary-light); font-weight: var(--font-weight-light); font-size: 1.25rem;">
+                    No wifi, no problem. Your trip plans are locally downloaded for access anywhere.
+                </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="{{ url_for('static', path='img/home_stuff_img_3.png') }}" alt="Offline Access Image" class="img-fluid rounded" style="height:250px;  min-width: 100%; object-fit: contain;">
+          </div>
+        </div>
+    </div>
+
+    <div class="card text-center mx-5 mt-5 mb-3" data-bs-theme="dark"  style="background-color: var(--primary-dark) !important; border: none;">
+        <div class="card-body">
+            <h2 class="card-title mb-5" style="font-family: var(--primary-font-family); color: var(--primary-light); font-weight: var(--font-weight-semi-bold); font-size: 2rem;">Empowered by our sponsors:</h2>
+            <img src="{{ url_for('static', path='img/sponsor_logos.png') }}" class="card-img-bottom" alt="Sponsors" style="width: 600px; object-fit: contain;">
+        </div>
+    </div>
+{% endblock %}

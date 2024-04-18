@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    FAQs
+{% endblock %}
+
+{% block content %}
+    <div style="display: flex;">
+        <div class="col mx-auto justify-content-center" style="flex: 1 1 20%;">
+            <aside>
+                <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-orange);">
+                    <!-- <div class="card-header text-light">
+                    Menu
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);">Menu</h5>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-threads-fill ms-4 me-1"></i>&nbsp;&nbsp;Communities
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-tag-fill ms-4 me-1"></i>&nbsp;&nbsp;Categories
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-book-fill ms-4 me-1"></i>&nbsp;&nbsp;Diaries
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-lightbulb-fill ms-4 me-1"></i>&nbsp;&nbsp;Tips & Tricks
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="/help">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-question-circle-fill ms-4 me-1"></i>&nbsp;&nbsp;Help
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-info-circle-fill ms-4 me-1"></i>&nbsp;&nbsp;About Us
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card mb-4 mt-3 mx-3 card-collapse-custom" data-bs-theme="dark" style="border-color: var(--primary-orange);">
+                    <div class="card-body">
+                        <button type="button" class="btn pb-0 pt-0 px-0 btn-collapse-custom" data-bs-toggle="collapse" data-bs-target="#followedcommunitiescollapse" aria-expanded="false" aria-controls="followedcommunitiescollapse">
+                            <h5 class="card-title mb-0" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-threads me-2"></i>Followed Communities<i class="bi bi-caret-down-fill ms-4 down-arrow-custom"></i></h5>
+                        </button>
+                        <div class="collapse" id="followedcommunitiescollapse">
+                            {% if user.followed_communities_count == 0 %}
+                                <p class="card-text text-body-secondary text-center mt-4">No followed communities yet</p>
+                            {% else %}
+                                {% for i in range(user.followed_communities_count) %}
+                                    <a href="#" style="text-decoration: none;">
+                                        <div class="card mb-3 mx-1 mt-4 card-post-custom rounded-pill" style="border: none; background-color: var(--primary-dark);">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    {% if user.followed_communities[i].img %}
+                                                        <img src="{{ url_for('static', path=user.followed_communities[i].img) }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                                                    {% else %}
+                                                        <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                                                    {% endif %}
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        {% if user.followed_communities[i].name|length > 10 %}
+                                                            <h6 class="card-title mb-0">{{ user.followed_communities[i].name[0:10] }}...</h6>
+                                                        {% else %}
+                                                            <h6 class="card-title mb-0">{{ user.followed_communities[i].name }}</h6>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <div class="col mx-auto justify-content-center align-items-center" style="flex: 1 1 60%;">
+            <h2 class="ms-3 mt-3 mb-3 text-center" style="font-family: var(--secondary-font-family); color: var(--secondary-light); ">FAQs</h2>
+            <div class="container-fluid mt-4 mb-4">
+                <a class="card card-post-custom faq-card-custom" data-bs-toggle="collapse" href="#faqcollapse1" data-bs-theme="dark" role="button" aria-expanded="false" aria-controls="faqcollapse" style="text-decoration: none;">
+                    <div class="card-body" style="display: inline-flex;">
+                        <p class="mb-0" style="flex: 1 1 99%;">Why Vacation Central?</p>
+                        <i class="bi bi-plus-lg" style="flex: 1 1 1%; font-size: large;"></i>
+                    </div>
+                </a>
+                <div class="collapse" id="faqcollapse1" data-bs-theme="dark">
+                    <div class="pt-3 pb-1 card card-body" style="background-color: var(--primary-dark) !important; border: none;">
+                      <div class="container-fluid ms-2 collapse-text-custom rounded">
+                        <p class="mb-0 text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-light);">
+                            Established in 2022, VacationCentral has since positioned itself as one of the leading companies,
+                            providing great offers, much more activities, exclusive discounts, and a seamless online booking experience
+                            to many of its customers.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-4 mb-4">
+                <a class="card card-post-custom faq-card-custom" data-bs-toggle="collapse" href="#faqcollapse2" data-bs-theme="dark" role="button" aria-expanded="false" aria-controls="faqcollapse" style="text-decoration: none;">
+                    <div class="card-body" style="display: inline-flex;">
+                        <p class="mb-0" style="flex: 1 1 99%;">
+                            Can you explain how individuals can earn points through local initiatives and reporting environmental issues?
+                        </p>
+                        <i class="bi bi-plus-lg" style="flex: 1 1 1%; font-size: large;"></i>
+                    </div>
+                </a>
+                <div class="collapse" id="faqcollapse2" data-bs-theme="dark">
+                    <div class="pt-3 pb-1 card card-body" style="background-color: var(--primary-dark) !important; border: none;">
+                      <div class="container-fluid ms-2 collapse-text-custom rounded">
+                        <p class="mb-0 text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-light);">
+                            Individuals can earn points by actively participating in local initiatives that promote sustainable
+                            practices, such as community clean-ups, tree planting events, or recycling programs. Additionally, users
+                            can earn points by reporting environmental issues in their surroundings, such as pollution, waste dumping,
+                            or habitat destruction.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-4 mb-4">
+                <a class="card card-post-custom faq-card-custom" data-bs-toggle="collapse" href="#faqcollapse3" data-bs-theme="dark" role="button" aria-expanded="false" aria-controls="faqcollapse" style="text-decoration: none;">
+                    <div class="card-body" style="display: inline-flex;">
+                        <p class="mb-0" style="flex: 1 1 99%;">
+                            What kind of sustainable practices are incentivized for local businesses, and how do they earn points?
+                        </p>
+                        <i class="bi bi-plus-lg" style="flex: 1 1 1%; font-size: large;"></i>
+                    </div>
+                </a>
+                <div class="collapse" id="faqcollapse3" data-bs-theme="dark">
+                    <div class="pt-3 pb-1 card card-body" style="background-color: var(--primary-dark) !important; border: none;">
+                      <div class="container-fluid ms-2 collapse-text-custom rounded">
+                        <p class="mb-0 text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-light);">
+                            Local businesses earn points for adopting and promoting sustainable practices, such as reducing energy consumption, 
+                            implementing recycling programs, using eco-friendly packaging, or supporting local suppliers.
+                            Points are awarded based on the scale and impact of these practices.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-4 mb-4">
+                <a class="card card-post-custom faq-card-custom" data-bs-toggle="collapse" href="#faqcollapse4" data-bs-theme="dark" role="button" aria-expanded="false" aria-controls="faqcollapse" style="text-decoration: none;">
+                    <div class="card-body" style="display: inline-flex;">
+                        <p class="mb-0" style="flex: 1 1 99%;">
+                            Can users redeem their points for rewards, and if so, what kind of rewards are available?
+                        </p>
+                        <i class="bi bi-plus-lg" style="flex: 1 1 1%; font-size: large;"></i>
+                    </div>
+                </a>
+                <div class="collapse" id="faqcollapse4" data-bs-theme="dark">
+                    <div class="pt-3 pb-1 card card-body" style="background-color: var(--primary-dark) !important; border: none;">
+                      <div class="container-fluid ms-2 collapse-text-custom rounded">
+                        <p class="mb-0 text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-light);">
+                            Yes, users can redeem their points for rewards available on the platform. Rewards may include discounts at
+                            local businesses, eco-friendly products, vouchers for sustainable experiences, or donations to environmental
+                            causes.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-4 mb-4">
+                <a class="card card-post-custom faq-card-custom" data-bs-toggle="collapse" href="#faqcollapse5" data-bs-theme="dark" role="button" aria-expanded="false" aria-controls="faqcollapse" style="text-decoration: none;">
+                    <div class="card-body" style="display: inline-flex;">
+                        <p class="mb-0" style="flex: 1 1 99%;">
+                            How can users share their travel adventures in their personal diary, and how are points earned for this?
+                        </p>
+                        <i class="bi bi-plus-lg" style="flex: 1 1 1%; font-size: large;"></i>
+                    </div>
+                </a>
+                <div class="collapse" id="faqcollapse5" data-bs-theme="dark">
+                    <div class="pt-3 pb-1 card card-body" style="background-color: var(--primary-dark) !important; border: none;">
+                      <div class="container-fluid ms-2 collapse-text-custom rounded">
+                        <p class="mb-0 text-light" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-light);">
+                            Users can share their travel adventures in their personal diary by writing about their experiences, tips,
+                            and recommendations for sustainable travel. Points are earned based on the quality and engagement of the
+                            content shared, as well as the usefulness of the tips and recommendations provided.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col mx-auto justify-content-center" style="flex: 1 1 20%;">
+            <aside>
+                <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-light);">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-graph-up-arrow me-2"></i>Trending</h5>
+                        {% if user.trending_count == 0 %}
+                            <p class="card-text text-body-secondary text-center">No trending posts</p>
+                        {% else %}
+                            {% for i in range(user.trending_count) %}
+                                <a href="#" style="text-decoration: none;">
+                                    <div class="card mb-3 mx-1 card-post-custom" style="border: none; background-color: var(--primary-dark);">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <div class="container-fluid rounded" style="background-color: var(--secondary-dark); min-height: 100%; min-width: 100%; object-fit: cover;">
+                                                    <p class="text-light pt-3 text-center align-baseline" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); font-size: medium; font-optical-sizing: auto;">{{ user.trending[i].month }}</p>
+                                                    <p class="text-primary text-center align-baseline" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); font-size: x-large; font-optical-sizing: auto;">{{ user.trending[i].day }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    {% if user.trending[i].name|length > 20 %}
+                                                        <h6 class="card-title">{{ user.trending[i].name[0:20] }}...</h6>
+                                                    {% else %}
+                                                        <h6 class="card-title">{{ user.trending[i].name }}</h6>
+                                                    {% endif %}
+                                                    {% if user.trending[i].place|length > 20 %}
+                                                        <p class="card-text"><small class="text-body-secondary">{{ user.trending[i].place[0:20] }}...</small></p>
+                                                    {% else %}
+                                                        <p class="card-text"><small class="text-body-secondary">{{ user.trending[i].place }}</small></p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-light);">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-clock-history me-2"></i>Recent Searches</h5>
+                        {% if user.recent_searches_count == 0 %}
+                            <p class="card-text text-body-secondary text-center">No recent searches</p>
+                        {% else %}
+                            {% for i in range(user.recent_searches_count) %}
+                                <a href="#" style="text-decoration: none;">
+                                    <div class="card mb-3 mx-1 card-post-custom" style="border: none; background-color: var(--primary-dark);">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="{{ url_for('static', path=user.recent_searches[i].img) }}" class="img-fluid rounded-start" alt="Recent Search Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    {% if user.recent_searches[i].name|length > 20 %}
+                                                        <h6 class="card-title">{{ user.recent_searches[i].name[0:20] }}...</h6>
+                                                    {% else %}
+                                                        <h6 class="card-title">{{ user.recent_searches[i].name }}</h6>
+                                                    {% endif %}
+                                                    {% if user.recent_searches[i].place|length > 20 %}
+                                                        <p class="card-text"><small class="text-body-secondary">{{ user.recent_searches[i].place[0:20] }}...</small></p>
+                                                    {% else %}
+                                                        <p class="card-text"><small class="text-body-secondary">{{ user.recent_searches[i].place }}</small></p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+{% endblock %}

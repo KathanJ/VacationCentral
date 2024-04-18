@@ -18,9 +18,15 @@ routes_router = APIRouter()
 
 templates = Jinja2Templates(directory = "templates")
 
-@routes_router.get('/')
-async def home():
-    return "Hello World"
+# @routes_router.get('/')
+# async def home():
+#     return "Hello World"
+
+@routes_router.get("/", response_class=HTMLResponse)
+async def get_landing(request : Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request=request, name="index.html", context={}
+    )
 
 @routes_router.get("/login", response_class=HTMLResponse)
 async def get_login(request : Request) -> HTMLResponse:
@@ -28,9 +34,9 @@ async def get_login(request : Request) -> HTMLResponse:
         request=request, name="login.html", context={}
     )
 
-@routes_router.post("/login")
-async def post_login(username: Annotated[str, Form()], password: Annotated[str, Form()]) -> str | None:
-    return username
+# @routes_router.post("/login")
+# async def post_login(username: Annotated[str, Form()], password: Annotated[str, Form()]) -> str | None:
+#     return username
 
 @routes_router.get("/signup", response_class=HTMLResponse)
 async def get_signup(request : Request) -> HTMLResponse:
@@ -39,16 +45,18 @@ async def get_signup(request : Request) -> HTMLResponse:
     )
 
 dummy_post_objs = [
-    {"user" : "Kathan Jani", "img" : "static/img/post_img_2.png", "thread": {"img" : "static/img/vclogo-white.svg", "name" : "t/Thread2"}, "title" : "Statue Of Unity", "desc" : "dummy description 2", "posted_at" : "It's been 84 years...", "tags": ["#Gujarat","#HotelBRGBudgetStay","#SardarPatelZoologicalPark"], "likes": 25, "dislikes": 10, "comments": 12},
-    {"user" : "Harsh Awasthi", "img" : "static/img/post_img_1.png", "thread": {"img" : "static/img/vclogo.svg", "name" : "t/Thread1"}, "title" : "Taj Mahal", "desc" : "dummy description 1", "posted_at" : "A millenium ago...", "tags": ["#Agra","#TajMahalPalaceHotel","#MehtabBagh"], "likes": 100, "dislikes": 50, "comments": 25},
-    {"user" : "Priyanka Javani", "img" : "static/img/post_img_3.png", "thread": {"img" : "static/img/vclogo.svg", "name" : "t/Thread3"}, "title" : "Qutub Minar", "desc" : "dummy description 3", "posted_at" : "??? years ago...", "tags": ["#Delhi","#QutubResidencyHotel","#QutubMinarPark"], "likes": 50, "dislikes": 10, "comments": 4},
-    
+    {"user" : "KathanJani2803", "img" : "img/post_img_2.png", "community": {"img" : "img/vclogo-white.svg", "name" : "vc/Community2"}, "title" : "Statue Of Unity", "desc" : "dummy description 2", "posted_at" : "It's been 84 years...", "tags": ["#Gujarat","#HotelBRGBudgetStay","#SardarPatelZoologicalPark"], "likes": 25, "dislikes": 10, "comments": 12},
+    {"user" : "HarshAwasthi1204", "img" : "img/post_img_1.png", "community": {"img" : "img/vclogo.svg", "name" : "vc/Community1"}, "title" : "Taj Mahal", "desc" : "dummy description 1", "posted_at" : "A millenium ago...", "tags": ["#Agra","#TajMahalPalaceHotel","#MehtabBagh"], "likes": 100, "dislikes": 50, "comments": 25},
+    {"user" : "PriyankaJavani2310", "img" : "img/post_img_3.png", "community": {"img" : "img/vclogo.svg", "name" : "vc/Community3"}, "title" : "Qutub Minar", "desc" : "dummy description 3", "posted_at" : "??? years ago...", "tags": ["#Delhi","#QutubResidencyHotel","#QutubMinarPark"], "likes": 50, "dislikes": 10, "comments": 4},
+    {"user" : "KathanJani2803", "img" : "img/post_img_2.png", "community": {"img" : "img/vclogo-white.svg", "name" : "vc/Community2"}, "title" : "Statue Of Unity", "desc" : "dummy description 2", "posted_at" : "It's been 84 years...", "tags": ["#Gujarat","#HotelBRGBudgetStay","#SardarPatelZoologicalPark"], "likes": 25, "dislikes": 10, "comments": 12},
+    {"user" : "HarshAwasthi1204", "img" : "img/post_img_1.png", "community": {"img" : "img/vclogo.svg", "name" : "vc/Community1"}, "title" : "Taj Mahal", "desc" : "dummy description 1", "posted_at" : "A millenium ago...", "tags": ["#Agra","#TajMahalPalaceHotel","#MehtabBagh"], "likes": 100, "dislikes": 50, "comments": 25},
+    {"user" : "PriyankaJavani2310", "img" : "img/post_img_3.png", "community": {"img" : "img/vclogo.svg", "name" : "vc/Community3"}, "title" : "Qutub Minar", "desc" : "dummy description 3", "posted_at" : "??? years ago...", "tags": ["#Delhi","#QutubResidencyHotel","#QutubMinarPark"], "likes": 50, "dislikes": 10, "comments": 4},
 ]
 
 dummy_recent_search_objs = [
-    {"img" : "static/img/dummy_search_img_1.jpg", "name" : "Thar Desert", "place" : "Rajasthan & Gujarat"},
-    {"img" : "static/img/dummy_search_img_2.jpg", "name" : "Red Fort", "place" : "Delhi"},
-    {"img" : "static/img/dummy_search_img_3.jpg", "name" : "Golden Temple", "place" : "Punjab"},
+    {"img" : "img/dummy_search_img_1.jpg", "name" : "Thar Desert", "place" : "Rajasthan & Gujarat"},
+    {"img" : "img/dummy_search_img_2.jpg", "name" : "Red Fort", "place" : "Delhi"},
+    {"img" : "img/dummy_search_img_3.jpg", "name" : "Golden Temple", "place" : "Punjab"},
 ]
 
 now = datetime.now()
@@ -58,17 +66,47 @@ dummy_trending_objs = [
     {"name" : "Golden Temple", "place" : "Punjab", "day" : now.day, "month": now.strftime('%b').upper()},
 ]
 
-dummy_followed_threads_objs = [
-    {"img" : "static/img/vclogo.svg", "name" : "t/Thread1"},
-    {"img" : "static/img/vclogo-white.svg", "name" : "t/Thread2"},
-    {"img" : "static/img/vclogo.svg", "name" : "t/Thread3"},
+dummy_followed_communities_objs = [
+    {"img" : "img/vclogo.svg", "name" : "vc/Community1"},
+    {"img" : "img/vclogo-white.svg", "name" : "vc/Community2"},
+    {"img" : "img/vclogo.svg", "name" : "vc/Community3"},
 ]
 
+dob=datetime(2004,3,28)
 dummy_user_dict = {
-    "username" : "Kathan Jani", "user_id" : "1234567890", "profile_pic" : "static/img/generic_pfp.png",
+    "username" : "KathanJani2803", "name": "Kathan Jani", "bio":"I don't know where I'm going, but I'm on my way.", "user_id" : "1234567890", "profile_pic" : "img/generic_pfp.png",
+    "emailid": "kj2803@gmail.com", "region":"Asia", "contactno": "1234567890", "dob":dob.strftime("%Y-%m-%d"), "gender":"Male",
     "posts": dummy_post_objs, "recent_searches": dummy_recent_search_objs, "recent_searches_count": len(dummy_recent_search_objs),
-    "trending": dummy_trending_objs, "trending_count": len(dummy_trending_objs), "followed_threads": dummy_followed_threads_objs,
-    "followed_threads_count": len(dummy_followed_threads_objs)
+    "trending": dummy_trending_objs, "trending_count": len(dummy_trending_objs), "followed_communities": dummy_followed_communities_objs,
+    "followed_communities_count": len(dummy_followed_communities_objs), "search_suggestions": ["Thar Desert", "Red Fort", "Golden Temple"],
+    "location":"Gandhinagar", "birthdate":str(dob.strftime('%b'))+' '+str(dob.day)+', '+str(dob.year), "post_count": len(list(x for x in dummy_post_objs if x["user"] == "KathanJani2803")), "points": 1000
+}
+
+dummy_user_dict1 = {
+    "username" : "KathanJani2803", "name": "Kathan Jani", "bio":"I don't know where I'm going, but I'm on my way.", "user_id" : "1234567890", "profile_pic" : "img/generic_pfp.png",
+    "emailid": "kj2803@gmail.com", "region":"Asia", "contactno": "1234567890", "dob":dob.strftime("%Y-%m-%d"), "gender":"Male",
+    "posts": [dummy_post_objs[i:i+3] for i in range(0, len(dummy_post_objs), 3)], "recent_searches": dummy_recent_search_objs, "recent_searches_count": len(dummy_recent_search_objs),
+    "trending": dummy_trending_objs, "trending_count": len(dummy_trending_objs), "followed_communities": dummy_followed_communities_objs,
+    "followed_communities_count": len(dummy_followed_communities_objs), "search_suggestions": ["Thar Desert", "Red Fort", "Golden Temple"],
+    "location":"Gandhinagar", "birthdate":str(dob.strftime('%b'))+' '+str(dob.day)+', '+str(dob.year), "post_count": len(list(x for x in dummy_post_objs if x["user"] == "KathanJani2803")), "points": 1000
+}
+dob2=datetime(2003,4,12)
+dummy_user_dict2 = {
+    "username" : "KathanJani2803", "name": "Harsh Awasthi", "bio":"I don't know where I'm going, but I'm on my way.", "user_id" : "1204", "profile_pic" : "img/generic_pfp.png",
+    "emailid": "ha1204@gmail.com", "region":"Asia", "contactno": "1234567890", "dob":dob2.strftime("%Y-%m-%d"), "gender":"Male",
+    "posts": dummy_post_objs, "recent_searches": dummy_recent_search_objs, "recent_searches_count": len(dummy_recent_search_objs),
+    "trending": dummy_trending_objs, "trending_count": len(dummy_trending_objs), "followed_communities": dummy_followed_communities_objs,
+    "followed_communities_count": len(dummy_followed_communities_objs), "search_suggestions": ["Thar Desert", "Red Fort", "Golden Temple"],
+    "location":"Ahmedabad", "birthdate":str(dob2.strftime('%b'))+' '+str(dob2.day)+', '+str(dob2.year), "post_count": len(list(x for x in dummy_post_objs if x["user"] == "HarshAwasthi1204")), "points": 1000
+}
+dob3=datetime(2003,10,23)
+dummy_user_dict3 = {
+    "username" : "KathanJani2803", "name": "Priyanka Javani", "bio":"I don't know where I'm going, but I'm on my way.", "user_id" : "2310", "profile_pic" : "img/generic_pfp.png",
+    "emailid": "pj2310@gmail.com", "region":"Asia", "contactno": "1234567890", "dob":dob3.strftime("%Y-%m-%d"), "gender":"Female",
+    "posts": dummy_post_objs, "recent_searches": dummy_recent_search_objs, "recent_searches_count": len(dummy_recent_search_objs),
+    "trending": dummy_trending_objs, "trending_count": len(dummy_trending_objs), "followed_communities": dummy_followed_communities_objs,
+    "followed_communities_count": len(dummy_followed_communities_objs), "search_suggestions": ["Thar Desert", "Red Fort", "Golden Temple"],
+    "location":"Ahmedabad", "birthdate":str(dob3.strftime('%b'))+' '+str(dob3.day)+', '+str(dob3.year), "post_count": len(list(x for x in dummy_post_objs if x["user"] == "PriyankaJavani2310")), "points": 1000
 }
 
 @routes_router.get("/dashboard", response_class=HTMLResponse)
@@ -84,6 +122,44 @@ async def get_help(request : Request) -> HTMLResponse:
     return templates.TemplateResponse(
         request=request, name="help.html", context={
             "status":True,"user":dummy_user_dict
+        }
+    )
+
+@routes_router.get("/searchresults", response_class=HTMLResponse)
+async def get_searchresults(request : Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request=request, name="searchresults.html", context={
+            "status":True,"user":dummy_user_dict1
+        }
+    )
+
+@routes_router.get("/discussionthread", response_class=HTMLResponse)
+async def get_discussionthread(request : Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request=request, name="discussionthread.html", context={
+            "status":True,"user":dummy_user_dict, "post":dummy_post_objs[0]
+        }
+    )
+
+@routes_router.get("/faqs", response_class=HTMLResponse)
+async def get_faqs(request : Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request=request, name="faqs.html", context={
+            "status":True,"user":dummy_user_dict
+        }
+    )
+
+@routes_router.get("/profile/{username}/{tab}", response_class=HTMLResponse)
+async def get_profile(request : Request, tab : str, username : str) -> HTMLResponse:
+    if username == "KathanJani2803":
+        userdict = dummy_user_dict
+    elif username == "HarshAwasthi1204":
+        userdict = dummy_user_dict2
+    elif username == "PriyankaJavani2310":
+        userdict = dummy_user_dict3
+    return templates.TemplateResponse(
+        request=request, name="profile.html", context={
+            "status":True,"user":userdict, "tab":tab, "username":username
         }
     )
 
