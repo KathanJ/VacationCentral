@@ -7,85 +7,97 @@
 {% block content %}
     <div style="display: flex;">
         <div class="col mx-auto justify-content-center" style="flex: 1 1 20%;">
-            <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-orange);">
-                <!-- <div class="card-header text-light">
-                Menu
-                </div> -->
-                <div class="card-body">
-                    <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);">Menu</h5>
-                    <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
-                        <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
-                            <i class="bi bi-threads-fill ms-4 me-1"></i>&nbsp;&nbsp;Communities
-                        </div>
-                    </a>
-                    <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
-                        <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
-                            <i class="bi bi-tag-fill ms-4 me-1"></i>&nbsp;&nbsp;Categories
-                        </div>
-                    </a>
-                    <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
-                        <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
-                            <i class="bi bi-book-fill ms-4 me-1"></i>&nbsp;&nbsp;Diaries
-                        </div>
-                    </a>
-                    <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
-                        <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
-                            <i class="bi bi-lightbulb-fill ms-4 me-1"></i>&nbsp;&nbsp;Tips & Tricks
-                        </div>
-                    </a>
-                    <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="/help">
-                        <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
-                            <i class="bi bi-question-circle-fill ms-4 me-1"></i>&nbsp;&nbsp;Help
-                        </div>
-                    </a>
-                    <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
-                        <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
-                            <i class="bi bi-info-circle-fill ms-4 me-1"></i>&nbsp;&nbsp;About Us
-                        </div>
-                    </a>
+            <aside>
+                <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-orange);">
+                    <!-- <div class="card-header text-light">
+                    Menu
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);">Menu</h5>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-threads-fill ms-4 me-1"></i>&nbsp;&nbsp;Communities
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-tag-fill ms-4 me-1"></i>&nbsp;&nbsp;Categories
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-book-fill ms-4 me-1"></i>&nbsp;&nbsp;Diaries
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-lightbulb-fill ms-4 me-1"></i>&nbsp;&nbsp;Tips & Tricks
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="/help">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-question-circle-fill ms-4 me-1"></i>&nbsp;&nbsp;Help
+                            </div>
+                        </a>
+                        <a class="btn btn-light rounded-pill rounded-pill-menu-custom mb-3 w-100 text-start pt-0 pb-0" href="#">
+                            <div class="container-fluid pt-1 pb-1" style="background-color: var(--primary-light);">
+                                <i class="bi bi-info-circle-fill ms-4 me-1"></i>&nbsp;&nbsp;About Us
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="card mb-4 mt-3 mx-3 card-collapse-custom" data-bs-theme="dark" style="border-color: var(--primary-orange);">
-                <div class="card-body">
-                    <button type="button" class="btn pb-0 pt-0 px-0 btn-collapse-custom" data-bs-toggle="collapse" data-bs-target="#followedcommunitiescollapse" aria-expanded="false" aria-controls="followedcommunitiescollapse">
-                        <h5 class="card-title mb-0" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-threads me-2"></i>Followed Communities<i class="bi bi-caret-down-fill ms-4 down-arrow-custom"></i></h5>
-                    </button>
-                    <div class="collapse" id="followedcommunitiescollapse">
-                        {% if user.followed_communities_count == 0 %}
-                            <p class="card-text text-body-secondary text-center mt-4">No followed communities yet</p>
-                        {% else %}
-                            {% for i in range(user.followed_communities_count) %}
-                                <a href="#" style="text-decoration: none;">
-                                    <div class="card mb-3 mx-1 mt-4 card-post-custom rounded-pill" style="border: none; background-color: var(--primary-dark);">
-                                        <div class="row g-0">
-                                            <div class="col-md-3">
-                                                {% if user.followed_communities[i].img %}
-                                                    <img src="{{ url_for('static', path=user.followed_communities[i].img) }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
-                                                {% else %}
-                                                    <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
-                                                {% endif %}
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    {% if user.followed_communities[i].name|length > 10 %}
-                                                        <h6 class="card-title mb-0">{{ user.followed_communities[i].name[0:10] }}...</h6>
+                <div class="card mb-4 mt-3 mx-3 card-collapse-custom" data-bs-theme="dark" style="border-color: var(--primary-orange);">
+                    <div class="card-body">
+                        <button type="button" class="btn pb-0 pt-0 px-0 btn-collapse-custom" data-bs-toggle="collapse" data-bs-target="#followedcommunitiescollapse" aria-expanded="false" aria-controls="followedcommunitiescollapse">
+                            <h5 class="card-title mb-0" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-threads me-2"></i>Followed Communities<i class="bi bi-caret-down-fill down-arrow-custom"></i></h5>
+                        </button>
+                        <div class="collapse" id="followedcommunitiescollapse">
+                            {% if user.followed_communities_count == 0 %}
+                                <p class="card-text text-body-secondary text-center mt-4" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-semi-bold);">No followed communities yet</p>
+                            {% else %}
+                                {% for i in range(user.followed_communities_count) %}
+                                    <a href="#" style="text-decoration: none;">
+                                        <div class="card mb-3 mx-1 mt-4 card-post-custom rounded-pill" style="border: none; background-color: var(--primary-dark);">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    {% if user.followed_communities[i].img %}
+                                                        <img src="{{ url_for('static', path=user.followed_communities[i].img) }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
                                                     {% else %}
-                                                        <h6 class="card-title mb-0">{{ user.followed_communities[i].name }}</h6>
+                                                        <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
                                                     {% endif %}
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        {% if user.followed_communities[i].name|length > 10 %}
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.followed_communities[i].name[0:10] }}...</h6>
+                                                        {% else %}
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.followed_communities[i].name }}</h6>
+                                                        {% endif %}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            {% endfor %}
-                        {% endif %}
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
         <div class="col mx-auto justify-content-center align-items-center" style="flex: 1 1 60%;">
-            <div class="container-fluid rounded mt-3 pt-3 pb-3 px-4" data-bs-theme="dark" style="background-color: var(--extra-dark);">
-                <div class="container-fluid px-0"  style="display: inline; width: 100%;">
+            <div class="container-fluid rounded mt-3 pt-3 pb-3 px-4" data-bs-theme="dark" style="background-color: var(--extra-dark); position: relative;">
+                <div class="dropdown" data-bs-theme="dark" style="position: absolute; top: 20px; right: 20px;">
+                    <button type="button" class="btn btn-sm btn-three-dots-custom rounded me-1 align-self-center dropdown" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-secondary mt-2">
+                        <li><a class="dropdown-item dropdown-item-secondary" href="#"><i class="bi bi-bookmark"></i>&nbsp;&nbsp;Save</a></li>
+                        <li><hr class="dropdown-divider dropdown-divider-secondary"></li>
+                        <li><a class="dropdown-item dropdown-item-secondary" href="#"><i class="bi bi-eye-slash"></i>&nbsp;&nbsp;Hide</a></li>
+                        <li><hr class="dropdown-divider dropdown-divider-secondary"></li>
+                        <li><a class="dropdown-item dropdown-item-secondary" href="#"><i class="bi bi-flag"></i>&nbsp;&nbsp;Report</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="container-fluid px-0"  style="display: inline; width: 100%;">
                     <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
                         {% if post.user %}
                             <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="20" width ="20" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
@@ -110,146 +122,608 @@
                     <a href="#" class="ms-auto" style="display: inline; position: absolute; top: 10px; right: 10px;">
                         <i class="bi bi-three-dots text-light" style="font-size: 1.5rem;"></i>
                     </a>
-                </div>
-                <a class="nav-link mt-3 mb-2" href="#" style="color: var(--primary-light);"><h4 class="card-title">{{ post.title }}</h4></a>
-            </div>
-            <!-- {% for post in user.posts %}
-                <div class="card mb-2 mx-3 card-post-custom" data-bs-theme="dark">
+                </div> -->
+                <div class="container-fluid mx-0 px-0" style="width: 90%;">
                     <div class="row g-0">
-                        <div class="col-md-3">
-                            <img src="{{ url_for('static', path=post.img) }}" class="img-fluid rounded-start" alt="Post Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                        <div class="col-sm-1 align-self-center" style="width: 5%;">
+                            {% if post.community.img %}
+                                <img src="{{ url_for('static', path=post.community.img) }}" style="background-color: var(--secondary-dark); height: 2.25em; object-fit: contain;" class="img-fluid rounded-circle" alt="Community Image">
+                            {% else %}
+                                <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" style="background-color: var(--secondary-dark); height: 2.25em; object-fit: contain;" class="img-fluid rounded-circle" alt="Community Image">
+                            {% endif %}
                         </div>
-                        <div class="col-md-8 ms-4" style="display: flex;">
-                            <div class="card-body" style="flex: 1 1 90;">
+                        <div class="col-sm-10 ms-2">
+                            <div class="card-body">
+                                <a href="#" class="nav-link hlink-text-custom" style="display: inline;">
+                                    <div class="container-fluid d-flex me-3 px-0" style="display: inline;">
+                                        <h5 class="modal-title card-post-title-custom" style="font-size: small; display: inline;">{{ post.community.name }}</h5>
+                                    </div>
+                                </a>
                                 <div class="container-fluid px-0"  style="display: inline; width: 100%;">
-                                    <a href="#" class="nav-link hlink-text-custom" style="display: inline;">
-                                        {% if post.user %}
-                                            <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="20" width ="20" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                        <!-- {% if post.user %}
+                                            <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="10" width ="10" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
                                         {% else %}
-                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="20" width ="20" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="10" width ="10" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                        {% endif %} -->
+                                        {% if post.user|length > 30 %}
+                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.user[0:30] }}...</p>
+                                        {% else %}
+                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.user }}</p>
                                         {% endif %}
-                                        <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ post.user }}</p>
                                     </a>
-                                    &nbsp;&nbsp;<i class="bi bi-circle-fill" style="font-size: 0.25rem; vertical-align: 50%;"></i>&nbsp;&nbsp;
-                                    <a href="#" class="nav-link hlink-text-custom" style="display: inline;">
+                                    &nbsp;<i class="bi bi-circle-fill text-light" style="font-size: 0.2rem; vertical-align: 50%;"></i>&nbsp;
+                                    <!-- <a href="#" class="nav-link hlink-text-custom" style="display: inline;">
                                         {% if post.community.img %}
-                                            <img src="{{ url_for('static', path=post.community.img) }}" height="20" width ="20" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Community Image">
+                                            <img src="{{ url_for('static', path=post.community.img) }}" height="10" width ="10" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Community Image">
                                         {% else %}
-                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="20" width ="20" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Community Image">
+                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="10" width ="10" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Community Image">
                                         {% endif %}
-                                        <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ post.community.name }}</p>
+                                        {% if post.community.name|length > 30 %}
+                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.community.name[0:30] }}...</p>
+                                        {% else %}
+                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.community.name }}</p>
+                                        {% endif %}
                                     </a>
-                                    &nbsp;&nbsp;<i class="bi bi-circle-fill" style="font-size: 0.25rem; vertical-align: 50%;"></i>&nbsp;&nbsp;
+                                    &nbsp;&nbsp;<i class="bi bi-circle-fill text-light" style="font-size: 0.25rem; vertical-align: 50%;"></i>&nbsp;&nbsp; -->
                                     <div class="container-fluid px-0" style="display: inline;">
-                                        <p class="card-text" style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ post.posted_at }}</p>
+                                        {% if post.posted_at|length > 30 %}
+                                            <p class="card-text" style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); color: var(--secondary-light); font-size: x-small; font-optical-sizing: auto;">{{ post.posted_at[0:30] }}...</p>
+                                        {% else %}
+                                            <p class="card-text" style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); color: var(--secondary-light); font-size: x-small; font-optical-sizing: auto;">{{ post.posted_at }}</p>
+                                        {% endif %}
                                     </div>              
                                 </div>
-                                <a class="nav-link mt-3 mb-2" href="#"><h4 class="card-title">{{ post.title }}</h4></a>
-                                {% for tag in post.tags %}
-                                    <a class="btn btn-sm badge badge-custom me-1 mb-2">{{ tag }}</a>
-                                {% endfor %}
-                                {% if post.desc|length > 30 %}
-                                    <p class="card-text mb-3">{{ post.desc[0:30] }}...</p>
-                                {% else %}
-                                    <p class="card-text mb-3">{{ post.desc }}</p>
-                                {% endif %}
-                                <div class="container-fluid px-0"  style="display: inline; width: 50%;">
-                                    <button type="button" class="btn btn-sm btn-upvote-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
-                                        <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ post.likes }}
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-downvote-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
-                                        <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ post.dislikes }}
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-comment-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
-                                        <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ post.comments }}
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-share-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
-                                        <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
-                                    </button>              
-                                </div>
                             </div>
-                            <button type="button" class="btn btn-sm btn-interaction-custom rounded me-1 align-self-center" style="flex: 1 1 10;"><i class="bi bi-heart-fill"></i></button>
                         </div>
                     </div>
                 </div>
-                {% if not loop.last %}
-                    <hr class="mx-3 mt-2 mb-2" style="border: 1px solid var(--secondary-light);">
+                <a class="nav-link mt-3 mb-1" href="#" style="color: var(--primary-light);"><h4 class="card-title card-post-title-custom">{{ post.title }}</h4></a>
+                <div class="container-fluid px-0 mx-0">
+                    {% for tag in post.tags[0:3] %}
+                        <a class="btn btn-sm badge badge-custom me-1 mb-2" style="font-size: x-small;">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                {% if post.imgs %}
+                    <div id="postcarousel" class="carousel slide rounded mb-3">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#postcarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            {% for i in range(1, post.imgs|length) %}
+                            <button type="button" data-bs-target="#postcarousel" data-bs-slide-to="{{ i }}" aria-label="Slide {{ i }}"></button>
+                            {% endfor %}
+                            <!-- <button type="button" data-bs-target="#postcarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+                        </div>
+                        <div class="carousel-inner rounded" style="height: 25em; overflow: hidden;">
+                            <div class="carousel-item active">
+                                <img src="{{ url_for('static', path=post.imgs[0]) }}" class="d-block w-100" style="min-height: 100%; min-width: 100%; object-fit: cover;" alt="Post Image">
+                            </div>
+                            {% for i in range(1, post.imgs|length) %}
+                                <div class="carousel-item">
+                                    <img src="{{ url_for('static', path=post.imgs[i]) }}" class="d-block w-100" style="min-height: 100%; min-width: 100%; object-fit: cover;" alt="Post Image">
+                                </div>
+                            {% endfor %}
+                            <!-- <div class="carousel-item">
+                                <img src="..." class="d-block w-100" alt="...">
+                            </div> -->
+                        </div>
+                        {% if post.imgs|length > 1 %}
+                            <button class="carousel-control-prev" type="button" data-bs-target="#postcarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#postcarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        {% endif %}
+                    </div>
                 {% endif %}
-            {% endfor %} -->
+
+                <div class="container-fluid px-0 mx-0">
+                    <p class="card-text card-post-desc-custom mb-3" style="color: var(--primary-light); font-size: small;">{{ post.desc }}</p>
+                </div>
+
+                <div class="container-fluid px-0"  style="width: 100%;">
+                    <button type="button" class="btn btn-sm btn-upvote-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ post.likes }}
+                    </button>
+                    <button type="button" class="btn btn-sm btn-downvote-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                        <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ post.dislikes }}
+                    </button>
+                    <button type="button" class="btn btn-sm btn-comment-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                        <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ post.comments|length }}
+                    </button>
+                    <button type="button" class="btn btn-sm btn-share-custom rounded-pill me-2 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                        <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                    </button>              
+                </div>
+                <hr class="mt-2 mb-2" style="border: 2px solid var(--secondary-light);">
+                <div class="card mb-1 mt-1 mx-3" style="border: none;" data-bs-theme="dark">
+                    <div class="row g-10">
+                        <div class="col-sm-1 ms-4 align-self-center">
+                            {% if user.profile_pic %}
+                                <img src="{{ url_for('static', path='img/generic_pfp.png') }}" style="background-color: var(--secondary-dark)" class="img-fluid rounded-circle" alt="Profile Picture">
+                            {% else %}
+                                <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" style="background-color: var(--secondary-dark)" class="img-fluid rounded-circle" alt="Profile Picture">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-10 ms-2 px-0">
+                            <div class="card-body px-0">
+                                <form class="d-flex me-auto" role="quick post" style="display: inline;" id="quickpostform">
+                                    <input type="text" class="form-control search-input-text-custom me-auto align-self-center form-input-custom input-text-custom rounded-pill" id="quickpostbar" placeholder="Add Comment" aria-label="Quick Post" aria-describedby="quickpostbtn" style="border: none; background-color: var(--secondary-dark); color: var(--primary-light);">
+                                    <button class="btn btn-orange-custom ms-4 align-self-center rounded-pill" style="width: 15%;" id="quickpostbtn" type="submit"><i class="bi bi-send-fill"></i>&nbsp;&nbsp;Post</button>
+                                </form>
+                                <!-- <div class="container-fluid px-0 mx-0">
+                                    <a class="btn btn-sm badge-custom mx-1 px-2 mt-3 mb-1"><i class="bi bi-emoji-laughing"></i>&nbsp;&nbsp;&nbsp;Emojis</a>
+                                    <a class="btn btn-sm badge-custom mx-1 px-2 mt-3 mb-1"><i class="bi bi-images"></i>&nbsp;&nbsp;&nbsp;Attach Image(s)</a>
+                                    <a class="btn btn-sm badge-custom mx-1 px-2 mt-3 mb-1"><img src="{{ url_for('static', path='img/gif_icon_light.svg') }}" height="19" width="19"></i>&nbsp;&nbsp;&nbsp;Attach GIF(s)</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-2 mb-2" style="border: 2px solid var(--secondary-light);">
+                <div class="container-fluid px-0" style="display: flex; flex-direction: column;">
+                    {% if post.comments %}
+                        {% for comment in post.comments %}
+                            <div class="container-fluid px-0 mb-2" style="display: flex;">
+                                <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative; overflow: hidden;">
+                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                        {% if comment.user.profile_pic %}
+                                            <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                        {% else %}
+                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                        {% endif %}
+                                    </a>
+                                    <div class="d-flex mt-1" style="height: 100%; position: absolute; left:0.7em;">
+                                        <div class="vr" style="color: var(--primary-light);"></div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                    <div class="container-fluid px-0 mx-0 mb-2">
+                                        <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ comment.user }}</p>
+                                        </a>
+                                        {% if comment.user == post.user %}
+                                            &nbsp;<p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-bold); font-size: small; font-optical-sizing: auto; color: var(--primary-orange);">OP</p>
+                                        {% endif %}
+                                        <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ comment.body }}</p>
+                                        <div class="container-fluid px-0"  style="width: 100%;">
+                                            <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ comment.likes }}
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ comment.dislikes }}
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ comment.replies|length }}
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                            </button>
+                                        </div>
+                                    </div>
+                                    {% if comment.replies %}
+                                        {% for reply in comment.replies %}
+                                            <div class="container-fluid px-0 mb-2" style="display: flex;">
+                                                <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative; overflow: hidden;">
+                                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                                        {% if reply.user.profile_pic %}
+                                                            <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                        {% else %}
+                                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                        {% endif %}
+                                                    </a>
+                                                    <div class="d-flex mt-1" style="height: 100%; position: absolute; left:0.7em;">
+                                                        <div class="vr" style="color: var(--primary-light);"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                                    <div class="container-fluid px-0 mx-0 mb-2">
+                                                        <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ reply.user }}</p>
+                                                        </a>
+                                                        {% if reply.user == post.user %}
+                                                            &nbsp;<p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-bold); font-size: small; font-optical-sizing: auto; color: var(--primary-orange);">OP</p>
+                                                        {% endif %}
+                                                        <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ reply.body }}</p>
+                                                        <div class="container-fluid px-0"  style="width: 100%;">
+                                                            <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ reply.likes }}
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ reply.dislikes }}
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ reply.replies|length }}
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    {% if reply.replies %}
+                                                        {% for subreply in reply.replies %}
+                                                            {% if subreply.replies|length >= 1 %}
+                                                                <div class="container-fluid px-0 mb-2" style="display: flex;">
+                                                                    <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative; overflow: hidden;">
+                                                                        <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                                                            {% if subreply.user.profile_pic %}
+                                                                                <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                                            {% else %}
+                                                                                <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                                            {% endif %}
+                                                                        </a>
+                                                                        <div class="d-flex mt-1" style="height: 100%; position: absolute; left:0.7em;">
+                                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                                                        <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ subreply.user }}</p>
+                                                                        </a>
+                                                                        {% if subreply.user == post.user %}
+                                                                            &nbsp;<p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-bold); font-size: small; font-optical-sizing: auto; color: var(--primary-orange);">OP</p>
+                                                                        {% endif %}
+                                                                        <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ subreply.body }}</p>
+                                                                        <div class="container-fluid px-0"  style="width: 100%;">
+                                                                            <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ subreply.likes }}
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ subreply.dislikes }}
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ subreply.replies|length }}
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-orange-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto; font-size: xx-small;">
+                                                                                View More
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            {% else %}
+                                                                <div class="container-fluid px-0 mb-2" style="display: flex;">
+                                                                    <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative; overflow: hidden;">
+                                                                        <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                                                            {% if subreply.user.profile_pic %}
+                                                                                <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                                            {% else %}
+                                                                                <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                                            {% endif %}
+                                                                        </a>
+                                                                        <div class="d-flex mt-1" style="height: 100%; position: absolute; left:0.7em;">
+                                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                                                        <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ subreply.user }}</p>
+                                                                        </a>
+                                                                        <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ subreply.body }}</p>
+                                                                        <div class="container-fluid px-0"  style="width: 100%;">
+                                                                            <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ subreply.likes }}
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ subreply.dislikes }}
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ subreply.replies|length }}
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                                                <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="card-text text-body text-center text-light" style="color: var(--secondary-light); font-size: medium; font-family: var(--primary-font-family);">No Comments Yet</p>
+                    {% endif %}
+                    <!-- {% if post.comments %}
+                        {% for comment in post.comments %}
+                            <div class="container-fluid px-0 mb-2" style="display: flex;">
+                                <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative;">
+                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                        {% if comment.user.profile_pic %}
+                                            <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                        {% else %}
+                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                        {% endif %}
+                                    </a>
+                                    {% if not comment.replies %}
+                                        <div class="d-flex mt-1" style="height: 3em; position: absolute; left:0.7em;">
+                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                        </div>
+                                    {% elif comment.replies|length == 1 %}
+                                        <div class="d-flex mt-1" style="height: 8.5em; position: absolute; left:0.7em;">
+                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                        </div>
+                                    {% elif comment.replies|length >= 2 %}
+                                        <div class="d-flex mt-1" style="height: 14em; position: absolute; left:0.7em;">
+                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                        <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ comment.user }}</p>
+                                    </a>
+                                    <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ comment.body }}</p>
+                                    <div class="container-fluid px-0"  style="width: 100%;">
+                                        <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                            <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ comment.likes }}
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                            <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ comment.dislikes }}
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                            <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ comment.replies|length }}
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                            <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if comment.replies %}
+                                {% for reply in comment.replies %}
+                                    <div class="container-fluid px-0 mb-2" style="display: flex; margin-left: 1.25em; margin-right: 1.25em;">
+                                        <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative;">
+                                            <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                                {% if reply.user.profile_pic %}
+                                                    <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                {% else %}
+                                                    <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                {% endif %}
+                                            </a>
+                                            {% if not reply.replies %}
+                                                <div class="d-flex mt-1" style="height: 3em; position: absolute; left:0.7em;">
+                                                    <div class="vr" style="color: var(--primary-light);"></div>
+                                                </div>
+                                            {% elif reply.replies|length == 1 %}
+                                                <div class="d-flex mt-1" style="height: 8.5em; position: absolute; left:0.7em;">
+                                                    <div class="vr" style="color: var(--primary-light);"></div>
+                                                </div>
+                                            {% elif reply.replies|length >= 2 %}
+                                                <div class="d-flex mt-1" style="height: 14em; position: absolute; left:0.7em;">
+                                                    <div class="vr" style="color: var(--primary-light);"></div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                            <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                                <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ reply.user }}</p>
+                                            </a>
+                                            <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ reply.body }}</p>
+                                            <div class="container-fluid px-0"  style="width: 100%;">
+                                                <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                    <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ reply.likes }}
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                    <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ reply.dislikes }}
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                    <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ reply.replies|length }}
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                    <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% if reply.replies %}
+                                        {% if reply.replies|length > 1 %}
+                                            <div class="container-fluid px-0 mb-2" style="display: flex; margin-left: 2.5em; margin-right: 2.5em;">
+                                                <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative;">
+                                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                                        {% if reply.replies[0].user.profile_pic %}
+                                                            <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                        {% else %}
+                                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                        {% endif %}
+                                                    </a>
+                                                    <div class="d-flex mt-1" style="height: 3em; position: absolute; left:0.7em;">
+                                                        <div class="vr" style="color: var(--primary-light);"></div>
+                                                    </div>
+                                                    COMMENT OUT OPEN {% if not reply.replies[0].replies %}
+                                                        <div class="d-flex mt-1" style="height: 3em; position: absolute; left:0.7em;">
+                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                        </div>
+                                                    {% elif reply.replies[0].replies|length == 1 %}
+                                                        <div class="d-flex mt-1" style="height: 8.5em; position: absolute; left:0.7em;">
+                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                        </div>
+                                                    {% elif reply.replies[0].replies|length >= 2 %}
+                                                        <div class="d-flex mt-1" style="height: 14em; position: absolute; left:0.7em;">
+                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                        </div>
+                                                    {% endif %} COMMENT OUT CLOSE
+                                                </div>
+                                                <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                                        <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ reply.replies[0].user }}</p>
+                                                    </a>
+                                                    <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ reply.replies[0].body }}</p>
+                                                    <div class="container-fluid px-0"  style="width: 100%;">
+                                                        <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ reply.replies[0].likes }}
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ reply.replies[0].dislikes }}
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ reply.replies[0].replies|length }}
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-share-fill"></i>&nbsp;&nbsp;View More
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <div class="container-fluid px-0 mb-2" style="display: flex; margin-left: 2.5em; margin-right: 2.5em;">
+                                                <div class="container-fluid px-0" style="flex: 1 1 4%; position: relative;">
+                                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
+                                                        {% if reply.replies[0].user.profile_pic %}
+                                                            <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                        {% else %}
+                                                            <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="25" width ="25" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
+                                                        {% endif %}
+                                                    </a>
+                                                    <div class="d-flex mt-1" style="height: 3em; position: absolute; left:0.7em;">
+                                                        <div class="vr" style="color: var(--primary-light);"></div>
+                                                    </div>
+                                                    COMMENT OUT OPEN {% if not reply.replies[0].replies %}
+                                                        <div class="d-flex mt-1" style="height: 3em; position: absolute; left:0.7em;">
+                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                        </div>
+                                                    {% elif reply.replies[0].replies|length == 1 %}
+                                                        <div class="d-flex mt-1" style="height: 8.5em; position: absolute; left:0.7em;">
+                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                        </div>
+                                                    {% elif reply.replies[0].replies|length >= 2 %}
+                                                        <div class="d-flex mt-1" style="height: 14em; position: absolute; left:0.7em;">
+                                                            <div class="vr" style="color: var(--primary-light);"></div>
+                                                        </div>
+                                                    {% endif %} COMMENT OUT CLOSE
+                                                </div>
+                                                <div class="container-fluid px-0" style="flex: 1 1 96%; display: flex; flex-direction: column;">
+                                                    <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline; width: fit-content;">
+                                                        <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: small; font-optical-sizing: auto;">{{ reply.replies[0].user }}</p>
+                                                    </a>
+                                                    <p class="card-text mt-1 mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">{{ reply.replies[0].body }}</p>
+                                                    <div class="container-fluid px-0"  style="width: 100%;">
+                                                        <button type="button" class="btn btn-sm btn-upvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;{{ reply.replies[0].likes }}
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-downvote-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-hand-thumbs-down-fill"></i>&nbsp;&nbsp;{{ reply.replies[0].dislikes }}
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-comment-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-chat-square-fill"></i>&nbsp;&nbsp;{{ reply.replies[0].replies|length }}
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-share-comment-custom rounded-pill me-1 align-self-center" style="display: inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-optical-sizing: auto;">
+                                                            <i class="bi bi-share-fill"></i>&nbsp;&nbsp;Share
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <p class="card-text text-body text-center text-light" style="color: var(--secondary-light); font-size: medium; font-family: var(--primary-font-family);">No Comments Yet</p>
+                    {% endif %} -->
+                </div>
+            </div>
         </div>
         <div class="col mx-auto justify-content-center" style="flex: 1 1 20%;">
-            <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-light);">
-                <div class="card-body">
-                    <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-graph-up-arrow me-2"></i>Trending</h5>
-                    {% if user.trending_count == 0 %}
-                        <p class="card-text text-body-secondary text-center">No trending posts</p>
-                    {% else %}
-                        {% for i in range(user.trending_count) %}
-                            <a href="#" style="text-decoration: none;">
-                                <div class="card mb-3 mx-1 card-post-custom" style="border: none; background-color: var(--primary-dark);">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <div class="container-fluid rounded" style="background-color: var(--secondary-dark); min-height: 100%; min-width: 100%; object-fit: cover;">
-                                                <p class="text-light pt-3 text-center align-baseline" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); font-size: medium; font-optical-sizing: auto;">{{ user.trending[i].month }}</p>
-                                                <p class="text-primary text-center align-baseline" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); font-size: x-large; font-optical-sizing: auto;">{{ user.trending[i].day }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                {% if user.trending[i].name|length > 20 %}
-                                                    <h6 class="card-title">{{ user.trending[i].name[0:20] }}...</h6>
-                                                {% else %}
-                                                    <h6 class="card-title">{{ user.trending[i].name }}</h6>
-                                                {% endif %}
-                                                {% if user.trending[i].place|length > 20 %}
-                                                    <p class="card-text"><small class="text-body-secondary">{{ user.trending[i].place[0:20] }}...</small></p>
-                                                {% else %}
-                                                    <p class="card-text"><small class="text-body-secondary">{{ user.trending[i].place }}</small></p>
-                                                {% endif %}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        {% endfor %}
-                    {% endif %}
+            <aside>
+                <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-light);">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);">{{ post.community.name }}</h5>
+                        <p class="card-text text-body mb-1" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-semi-bold); font-size: medium;">{{ post.community.descheading }}</p>
+                        <p class="card-text text-body mb-2" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-normal); font-size: small;">{{ post.community.desc }}</p>
+                        <div class="container-fluid px-0 mx-0" style="display: flex;">
+                            <div class="container-fluid px-0 mx-0 text-center" style="flex: 1 1 33.33%;">
+                                <p class="card-text mb-0" style="font-family: var(--primary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); font-size: medium; font-optical-sizing: auto;">{{ post.community.member_count }}</p>
+                                <h6 class="card-text mb-0" style="font-family: var(--primary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">Members</h6>
+                            </div>
+                            <div class="container-fluid px-0 mx-0 text-center" style="flex: 1 1 33.33%;">
+                                <p class="card-text mb-0" style="font-family: var(--primary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); font-size: medium; font-optical-sizing: auto;">{{ post.community.mod_count }}</p>
+                                <h6 class="card-text mb-0" style="font-family: var(--primary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">Mods</h6>
+                            </div>
+                            <div class="container-fluid px-0 mx-0 text-center" style="flex: 1 1 33.33%;">
+                                <p class="card-text mb-0" style="font-family: var(--primary-font-family); font-weight: var(--font-weight-bold); color: var(--primary-light); font-size: medium; font-optical-sizing: auto;">{{ post.community.created_in }}</p>
+                                <h6 class="card-text mb-0" style="font-family: var(--primary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light); font-size: small; font-optical-sizing: auto;">Created</h6>
+                            </div>
+                        </div>
+                        <hr class="mt-2 mb-2" style="border: 1px solid var(--primary-light);">
+                        <div class="container-fluid px-0 mx-0 text-center mt-3">
+                            <button class="btn btn-orange-custom rounded-pill" style="font-size: small;">Join Community</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-light);">
-                <div class="card-body">
-                    <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-clock-history me-2"></i>Recent Searches</h5>
-                    {% if user.recent_searches_count == 0 %}
-                        <p class="card-text text-body-secondary text-center">No recent searches</p>
-                    {% else %}
-                        {% for i in range(user.recent_searches_count) %}
-                            <a href="#" style="text-decoration: none;">
-                                <div class="card mb-3 mx-1 card-post-custom" style="border: none; background-color: var(--primary-dark);">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="{{ url_for('static', path=user.recent_searches[i].img) }}" class="img-fluid rounded-start" alt="Recent Search Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                {% if user.recent_searches[i].name|length > 20 %}
-                                                    <h6 class="card-title">{{ user.recent_searches[i].name[0:20] }}...</h6>
-                                                {% else %}
-                                                    <h6 class="card-title">{{ user.recent_searches[i].name }}</h6>
-                                                {% endif %}
-                                                {% if user.recent_searches[i].place|length > 20 %}
-                                                    <p class="card-text"><small class="text-body-secondary">{{ user.recent_searches[i].place[0:20] }}...</small></p>
-                                                {% else %}
-                                                    <p class="card-text"><small class="text-body-secondary">{{ user.recent_searches[i].place }}</small></p>
-                                                {% endif %}
+                <div class="card mb-4 mt-3 mx-3" data-bs-theme="dark" style="border-color: var(--primary-light);">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-clock-history me-2"></i>Recent Searches</h5>
+                        {% if user.recent_searches_count == 0 %}
+                            <p class="card-text text-body-secondary text-center" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-semi-bold);">No recent searches</p>
+                        {% else %}
+                            {% for i in range(user.recent_searches_count) %}
+                                {% if "vc/" in user.recent_searches[i].name %}
+                                    <a href="#" style="text-decoration: none;">
+                                        <div class="card mb-3 mx-1 card-post-custom rounded-pill" style="border: none; background-color: var(--primary-dark);">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    {% if user.recent_searches[i].img %}
+                                                        <img src="{{ url_for('static', path=user.recent_searches[i].img) }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                                                    {% else %}
+                                                        <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                                                    {% endif %}
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        {% if user.recent_searches[i].name|length > 10 %}
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name[0:10] }}...</h6>
+                                                        {% else %}
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name }}</h6>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </a>
-                        {% endfor %}
-                    {% endif %}
+                                    </a>
+                                {% else %}
+                                    <a href="#" style="text-decoration: none;">
+                                        <div class="card mb-3 mx-1 card-post-custom" style="border: none; background-color: var(--primary-dark);">
+                                            <div class="row g-0">
+                                                <div class="col-md-4">
+                                                    <img src="{{ url_for('static', path=user.recent_searches[i].img) }}" class="img-fluid rounded-start" alt="Recent Search Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        {% if user.recent_searches[i].name|length > 20 %}
+                                                            <h6 class="card-title" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name[0:20] }}...</h6>
+                                                        {% else %}
+                                                            <h6 class="card-title" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name }}</h6>
+                                                        {% endif %}
+                                                        {% if user.recent_searches[i].place|length > 20 %}
+                                                            <p class="card-text"><small class="text-body-secondary" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].place[0:20] }}...</small></p>
+                                                        {% else %}
+                                                            <p class="card-text"><small class="text-body-secondary" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].place }}</small></p>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
+            </aside>
         </div>
     </div>
 {% endblock %}

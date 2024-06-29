@@ -20,31 +20,31 @@
                 <!-- <h4 style="font-family: var(--secondary-font-family); font-weight:var(--font-weight-light); color: var(--primary-light); margin-bottom: 24px;">
                     - St. Augustine
                 </h4> -->
-                <form action="/dashboard" method="GET">
+                <form action="/signup" method="POST" enctype="multipart/form-data">
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="usernameinput" class="form-label" style="color: var(--primary-light);">Username</label> -->
-                        <input type="text" class="form-control form-input-custom me-3 input-text-custom" id="usernameinput" aria-describedby="usernameHelp" placeholder="Username" name="username">
+                        <input type="text" class="form-control form-input-custom me-3 input-text-custom" id="usernameinput" aria-describedby="usernameHelp" placeholder="Username" name="username" required>
                         <!-- <div id="usernameHelp" class="form-text" style="color: var(--primary-light);">People can find you by your username.</div> -->
 
                         <!-- <label for="fullnameinput" class="form-label" style="color: var(--primary-light);">Full Name</label> -->
-                        <input type="text" class="form-control form-input-custom ms-3 input-text-custom" id="fullnameinput" aria-describedby="fullnameHelp" placeholder="Full Name" name="fullname">
+                        <input type="text" class="form-control form-input-custom ms-3 input-text-custom" id="fullnameinput" aria-describedby="fullnameHelp" placeholder="Full Name" name="fullname" required>
                         <!-- <div id="fullnameHelp" class="form-text" style="color: var(--primary-light);">People can find you by your full name.</div> -->
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="emailidinput" class="form-label" style="color: var(--primary-light);">Email address</label> -->
-                        <input type="email" class="form-control form-input-custom me-3 input-text-custom" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID" name="email">
+                        <input type="email" class="form-control form-input-custom me-3 input-text-custom" id="emailidinput" aria-describedby="emailHelp" placeholder="Email ID" name="email" required>
                         <!-- <div id="emailHelp" class="form-text" style="color: var(--primary-light);">We'll never share your email with anyone else.</div> -->
 
                         <!-- <label for="contactnoinput" class="form-label" style="color: var(--primary-light);">Email address</label> -->
-                        <input type="number" class="form-control form-input-custom ms-3 input-text-custom" id="contactnoinput" placeholder="Contact No" name="contact">
+                        <input type="number" class="form-control form-input-custom ms-3 input-text-custom" id="contactnoinput" placeholder="Contact No" name="contact" required>
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="addressinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
-                        <textarea class="form-control form-input-custom me-3 input-text-custom" style="flex: 1 1 50%;" id="addressinput" rows="3" cols="3" placeholder="Address" name="address"></textarea>
+                        <textarea class="form-control form-input-custom me-3 input-text-custom" style="flex: 1 1 50%;" id="addressinput" rows="3" cols="3" placeholder="Address" name="address" required></textarea>
 
                         <div class="ms-3" style="flex: 1 1 50%;">
                             <!-- <label for="regioninput" class="form-label" style="color: var(--primary-light);">Region</label> -->
-                            <select class="form-control form-input-custom mb-3 input-text-custom" id="regioninput" name="region">
+                            <select class="form-control form-input-custom mb-3 input-text-custom" id="regioninput" name="region" required>
                                 <option value="region" selected disabled>Region</option>
                                 <option value="north america">North America</option>
                                 <option value="south america">South America</option>
@@ -81,10 +81,10 @@
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="dobinput" class="form-label" style="color: var(--primary-light);">Date of Birth</label> -->
-                        <input type="date" class="form-control form-input-custom me-3 input-text-custom" id="dobinput" placeholder="Date of Birth" name="dob">
+                        <input type="date" class="form-control form-input-custom me-3 input-text-custom" id="dobinput" placeholder="Date of Birth" name="dob" required>
 
                         <!-- <label for="sexinput" class="form-label" style="color: var(--primary-light);">Sex</label> -->
-                        <select class="form-control form-input-custom ms-3 input-text-custom" id="sexinput" name="sex" style="height: min-content">
+                        <select class="form-control form-input-custom ms-3 input-text-custom" id="sexinput" name="sex" style="height: min-content" required>
                             <option value="gender" selected disabled>Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -94,10 +94,10 @@
                     </div>
                     <div class="mb-3" style="display: flex;">
                         <!-- <label for="passwordinput" class="form-label" style="color: var(--primary-light);">Password</label> -->
-                        <input type="password" class="form-control form-input-custom me-3 input-text-custom" id="passwordinput" placeholder="Password" name="password">
+                        <input type="password" class="form-control form-input-custom me-3 input-text-custom" id="passwordinput" placeholder="Password" name="password" required>
 
                         <!-- <label for="confirmpasswordinput" class="form-label" style="color: var(--primary-light);">Confirm Password</label> -->
-                        <input type="password" class="form-control form-input-custom ms-3 input-text-custom" id="confirmpasswordinput" placeholder="Confirm Password" name="confirmpassword">
+                        <input type="password" class="form-control form-input-custom ms-3 input-text-custom" id="confirmpasswordinput" placeholder="Confirm Password" name="confirmpassword" required>
                     </div>
                     <!-- <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="checkinput">
@@ -114,4 +114,20 @@
             <!-- <img src="{{ url_for('static', path='img/login-signup-bg.png') }}" style="height: 100vh; width: 55vw; float: right;"> -->
         </div>
     </div>
+
+    <script>
+        var password = document.getElementById("passwordinput")
+        var confirm_password = document.getElementById("confirmpasswordinput");
+
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
 {% endblock %}

@@ -19,13 +19,13 @@ from bson import ObjectId
 UserIdRef = ForwardRef('UserId')
 # UserInDBRef = ForwardRef('UserInDB')
 UserInGroupRef = ForwardRef('UserInGroup')
-UserInThreadRef = ForwardRef('UserInThread')
+UserInCommunityRef = ForwardRef('UserInCommunity')
 # ContactNoRef = ForwardRef('ContactNo')
 # TagRef = ForwardRef('Tag')
 # DiaryRef = ForwardRef('Diary')
 DiaryIdRef = ForwardRef('DiaryId')
-# ThreadRef = ForwardRef('Thread')
-ThreadIdRef = ForwardRef('ThreadId')
+# CommunityRef = ForwardRef('Community')
+CommunityIdRef = ForwardRef('CommunityId')
 # PostRef = ForwardRef('Post')
 PostIdRef = ForwardRef('PostId')
 # CommentRef = ForwardRef('Comment')
@@ -36,7 +36,10 @@ GroupIdRef = ForwardRef('GroupId')
 # PaymentInfoRef = ForwardRef('PaymentInfo')
 # NotificationRef = ForwardRef('Notification')
 NotificationIdRef = ForwardRef('NotificationId')
-
+TipsTricksIdRef = ForwardRef('TipsTricksId')
+TripIdRef = ForwardRef('TripId')
+SearchHistoryRef = ForwardRef('SearchHistory')
+TrendingTripsIdRef = ForwardRef('TrendingTrips')
 #Enums
 class Sex(str, Enum):
     male = "Male"
@@ -53,11 +56,11 @@ class Payment_Method(str, Enum):
 #     user = UserRef
 #     userindb = UserInDBRef
 #     useringroup = UserInGroupRef
-#     userinthread = UserInThreadRef
+#     userincommunity = UserInCommunityRef
 #     contactno = ContactNoRef
 #     tag = TagRef
 #     diary = DiaryRef
-#     thread = ThreadRef
+#     community = CommunityRef
 #     post = PostRef
 #     comment = CommentRef
 #     group = GroupRef
@@ -157,6 +160,7 @@ class Diary(DiaryId):
     images: list[FileUrl | FilePath] | None = None
     tags: list[Tag] | None = None
     category: str | None = None
+    community: CommunityIdRef # type: ignore
     likes: list[UserIdRef] | None = None # type: ignore
     dislikes: list[UserIdRef] | None = None # type: ignore
     comments: list[CommentIdRef] | None = None # type: ignore
@@ -165,18 +169,60 @@ class Diary(DiaryId):
 # class DiaryPDF(Diary):
 #     diary_pdf_file: FileUrl | FilePath
 
-class ThreadId(BaseModel):
-    thread_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
+class TipsTricksId(BaseModel):
+    tips_tricks_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
 
-class Thread(ThreadId):
-    # thread_id: str
-    owner: UserInThreadRef # type: ignore
-    moderators: list[UserInThreadRef] # type: ignore
+class TipsTricks(TipsTricksId):
+    # tips_tricks_id: str
+    title: str
+    # description: str
+    author: UserIdRef # type: ignore
+    content: dict[int,list[str]]
+    image: FileUrl | FilePath
+    tags: list[Tag] | None = None
+    category: str | None = None
+    community: CommunityIdRef # type: ignore
+    likes: list[UserIdRef] | None = None # type: ignore
+    dislikes: list[UserIdRef] | None = None # type: ignore
+    # comments: list[CommentIdRef] | None = None # type: ignore
+    posted_at: AwareDatetime | None = None
+
+
+class CommunityId(BaseModel):
+    community_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
+
+class Community(CommunityId):
+    # community_id: str
+    owner: UserInCommunityRef # type: ignore
+    name: str
+    description_heading: str
+    description: str
+    moderators: list[UserInCommunityRef] # type: ignore
     posts: list[PostIdRef] | None = None # type: ignore
     followers: list[UserIdRef] | None = None # type: ignore
     header_image: FileUrl | FilePath | None = None
-    thread_logo: FileUrl | FilePath | None = None
+    community_logo: FileUrl | FilePath | None = None
     created_at: AwareDatetime | None = None
+
+class TripId(BaseModel):
+    trip_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
+
+class Trip(TripId):
+    # trip_id: str
+    owner: UserIdRef # type: ignore
+    title: str
+    description: str
+    source_location: str
+    destination_location: str
+    start_date: AwareDatetime
+    end_date: AwareDatetime
+    members: list[UserIdRef] | None = None # type: ignore
+    # posts: list[PostIdRef] | None = None # type: ignore
+    post: PostIdRef # type: ignore
+    likes: list[UserIdRef] | None = None # type: ignore
+    dislikes: list[UserIdRef] | None = None # type: ignore
+    # comments: list[CommentIdRef] | None = None # type: ignore
+    posted_at: AwareDatetime | None = None
 
 class PostId(BaseModel):
     post_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
@@ -186,13 +232,13 @@ class Post(PostId):
     author: UserIdRef # type: ignore
     title: str
     description: str
-    source_location: str
-    destination_location: str
+    # source_location: str
+    # destination_location: str
     body: str
     images: list[FileUrl | FilePath] | None = None
     tags: list[Tag] | None = None
     category: str | None = None
-    thread: ThreadIdRef # type: ignore
+    community: CommunityIdRef # type: ignore
     likes: list[UserIdRef] | None = None # type: ignore
     dislikes: list[UserIdRef] | None = None # type: ignore
     comments: list[CommentIdRef] | None = None # type: ignore
@@ -254,6 +300,22 @@ class Notification(NotificationId):
     body: str
     reference: HttpUrl
 
+class SearchHistoryId(BaseModel):
+    search_history_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
+
+class SearchHistory(SearchHistoryId):
+    user: UserIdRef # type: ignore
+    search_query: str
+    # search_result: list[UserIdRef] | list[PostIdRef] | list[CommentIdRef] | list[DiaryIdRef] | list[TipsTricksIdRef] | None = None # type: ignore
+    search_result: list[UserIdRef, PostIdRef, CommentIdRef, DiaryIdRef, TipsTricksIdRef] | None = None # type: ignore
+
+class TrendingTripsId(BaseModel):
+    trending_trips_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
+
+class TrendingTrips(TrendingTripsId):
+    # trending_trips_id: str
+    trip: TripIdRef # type: ignore
+
 class UserId(BaseModel):
     user_id: Annotated[Optional[ObjectId], ObjectIdPydanticAnnotation] = None
 
@@ -262,20 +324,34 @@ class User(UserId):
     username: str
     email: EmailStr
     full_name: str
-    contact_no: ContactNo
-    dob: PastDate
-    current_location: str
-    addresses: list[Address]
-    sex: Sex
-    aadhar_card: FileUrl | FilePath
+    # contact_no: ContactNo
+    contact_no: str | None = None
+    # dob: PastDate
+    dob: str | None = None
+    # current_location: str
+    current_location: str | None = None
+    # addresses: list[Address]
+    addresses: str | None = None
+    searchhistory : list[SearchHistoryId] | None = None
+    # region: str
+    region: str
+    # sex: Sex
+    sex: str | None = None
+    # aadhar_card: FileUrl | FilePath
+    aadhar_card: FileUrl | FilePath | None = None
     diaries: list[DiaryIdRef] | None = None # type: ignore
     posts: list[PostIdRef] | None = None # type: ignore
+    tips_tricks: list[TipsTricksIdRef] | None = None # type: ignore
+    bio: str | None = None
+    profile_pic: FileUrl | FilePath | None = None
     comments: list[CommentIdRef] | None = None # type: ignore
     liked_posts: list[PostIdRef] | None = None # type: ignore
+    saved_posts: list[PostIdRef] | None = None # type: ignore
+    hidden_posts: list[PostIdRef] | None = None # type: ignore
     liked_comments: list[CommentIdRef] | None = None # type: ignore
     # followers: list['User'] | None = None
     followers: list[UserIdRef] | None = None # type: ignore
-    followed_threads: list[ThreadIdRef] | None = None # type: ignore
+    followed_communities: list[CommunityIdRef] | None = None # type: ignore
     notifications: list[NotificationIdRef] | None = None # type: ignore
     groups: list[GroupIdRef] | None = None # type: ignore
     points: int | None = None
@@ -293,5 +369,9 @@ class SecureUser(User):
 class UserInGroup(User):
     group_role: str
 
-class UserInThread(User):
-    thread_role: str
+class UserInCommunity(User):
+    community_role: str
+
+class Session(BaseModel):
+    user: UserIdRef # type: ignore
+    token: str

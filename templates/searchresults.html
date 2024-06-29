@@ -49,11 +49,11 @@
                 <div class="card mb-4 mt-3 mx-3 card-collapse-custom" data-bs-theme="dark" style="border-color: var(--primary-orange);">
                     <div class="card-body">
                         <button type="button" class="btn pb-0 pt-0 px-0 btn-collapse-custom" data-bs-toggle="collapse" data-bs-target="#followedcommunitiescollapse" aria-expanded="false" aria-controls="followedcommunitiescollapse">
-                            <h5 class="card-title mb-0" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-threads me-2"></i>Followed Communities<i class="bi bi-caret-down-fill ms-4 down-arrow-custom"></i></h5>
+                            <h5 class="card-title mb-0" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-threads me-2"></i>Followed Communities<i class="bi bi-caret-down-fill down-arrow-custom"></i></h5>
                         </button>
                         <div class="collapse" id="followedcommunitiescollapse">
                             {% if user.followed_communities_count == 0 %}
-                                <p class="card-text text-body-secondary text-center mt-4">No followed communities yet</p>
+                                <p class="card-text text-body-secondary text-center mt-4" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-semi-bold);">No followed communities yet</p>
                             {% else %}
                                 {% for i in range(user.followed_communities_count) %}
                                     <a href="#" style="text-decoration: none;">
@@ -69,9 +69,9 @@
                                                 <div class="col-md-8">
                                                     <div class="card-body">
                                                         {% if user.followed_communities[i].name|length > 10 %}
-                                                            <h6 class="card-title mb-0">{{ user.followed_communities[i].name[0:10] }}...</h6>
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.followed_communities[i].name[0:10] }}...</h6>
                                                         {% else %}
-                                                            <h6 class="card-title mb-0">{{ user.followed_communities[i].name }}</h6>
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.followed_communities[i].name }}</h6>
                                                         {% endif %}
                                                     </div>
                                                 </div>
@@ -87,6 +87,11 @@
         </div>
         <div class="col mx-auto justify-content-center align-items-center" style="flex: 1 1 60%;">
             <h2 class="ms-3 mb-3 mt-3 text-center" style="font-family: var(--secondary-font-family); color: var(--secondary-light); ">Search Results</h2>
+            <!-- <div class="container-fluid px-0" style="display: flex;">
+                <i class="bi bi-diamond-fill text-light" style="font-size: xx-small; align-self:center; text-align: center;"></i>
+                <hr class="text-light mx-0 mt-2 mb-2" style="text-align: center; border:1px solid; width:100%; border-color: var(--primary-light); display: inline; flex: 1;">
+                <i class="bi bi-diamond-fill text-light" style="font-size: xx-small; align-self:center;"></i>
+            </div> -->
             <hr class="text-light mx-0 mt-2 mb-2" style="border:1px solid; width:100%; border-color: var(--primary-light);">
             <div class="container-fluid px-1">
                 <div class="container-fluid px-0 mx-0 mt-2 mb-2">
@@ -126,7 +131,11 @@
                 <div class="container-fluid" style="display: inline-flex;">
                     {% for post in postbatch %}
                         <div class="card mb-2 mx-3 card-post-custom" style="width: 17.5rem;" data-bs-theme="dark">
-                            <img src="{{ url_for('static', path=post.img) }}" class="img-fluid rounded-top card-img-top" alt="Post Image" style="max-height: 100%; min-width: 100%; object-fit: cover;">
+                            {% if post.imgs %}
+                                <img src="{{ url_for('static', path=post.imgs[0]) }}" class="img-fluid rounded-top card-img-top" alt="Post Image" style="max-height: 100%; min-width: 100%; object-fit: cover;">
+                            {% else %}
+                                <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" class="img-fluid rounded-top card-img-top" alt="Post Image" style="max-height: 100%; min-width: 100%; object-fit: cover;">
+                            {% endif %}
                             <div class="dropdown" data-bs-theme="dark" style="position: absolute; top: 50px; right: 10px;">
                                 <button type="button" class="btn btn-sm btn-three-dots-custom rounded me-1 align-self-center dropdown" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots"></i></button>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-secondary mt-2">
@@ -140,14 +149,18 @@
                             <button type="button" class="btn btn-sm btn-interaction-custom rounded me-1 align-self-center" style="position: absolute; top: 10px; right: 10px;"><i class="bi bi-heart-fill"></i></button>
                             <div class="col-md">
                                 <div class="card-body pt-2">
-                                    <div class="container-fluid px-0"  style="width: 100%;">
+                                    <div class="container-fluid px-0"  style="width: 100%; word-wrap: break-word; word-break: break-all;">
                                         <a href="{{ url_for('get_profile', username=post.user, tab='posts') }}" class="nav-link hlink-text-custom" style="display: inline;">
                                             {% if post.user %}
                                                 <img src="{{ url_for('static', path='img/generic_pfp.png') }}" height="12" width ="12" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
                                             {% else %}
                                                 <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="12" width ="12" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Profile Picture">
                                             {% endif %}
-                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.user }}</p>
+                                            {% if post.user|length > 12 %}
+                                                <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.user[0:10] }}...</p>
+                                            {% else %}
+                                                <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.user }}</p>
+                                            {% endif %}
                                         </a>
                                         <i class="bi bi-circle-fill" style="font-size: 0.15rem; vertical-align: 50%;"></i>
                                         <a href="#" class="nav-link hlink-text-custom" style="display: inline;">
@@ -156,22 +169,30 @@
                                             {% else %}
                                                 <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" height="12" width ="12" style="background-color: var(--secondary-dark)" class="rounded-circle" alt="Community Image">
                                             {% endif %}
-                                            <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.community.name }}</p>
+                                            {% if post.community.name|length > 12 %}
+                                                <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.community.name[0:10] }}...</p>
+                                            {% else %}
+                                                <p style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); font-size: x-small; font-optical-sizing: auto;">{{ post.community.name }}</p>
+                                            {% endif %}
                                         </a>
                                         <i class="bi bi-circle-fill" style="font-size: 0.15rem; vertical-align: 50%;"></i>
                                         <div class="container-fluid px-0" style="display: inline;">
-                                            <p class="card-text" style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); color: var(--secondary-light); font-size: x-small; font-optical-sizing: auto;">{{ post.posted_at }}</p>
+                                            {% if post.posted_at|length > 12 %}
+                                                <p class="card-text" style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); color: var(--secondary-light); font-size: x-small; font-optical-sizing: auto;">{{ post.posted_at[0:10] }}...</p>
+                                            {% else %}
+                                                <p class="card-text" style="display:inline; font-family: var(--primary-font-family); font-weight: var(--font-weight-semi-bold); color: var(--secondary-light); font-size: x-small; font-optical-sizing: auto;">{{ post.posted_at }}</p>
+                                            {% endif %}
                                         </div>              
                                     </div>
-                                    <a class="nav-link mt-2 mb-2" href="#"><h5 class="card-title">{{ post.title }}</h5></a>
+                                    <a class="nav-link mt-2 mb-2" href="{{ url_for('get_discussionthread', id=post.id) }}"><h5 class="card-title card-post-title-custom">{{ post.title }}</h5></a>
                                     <div class="container-fluid px-0" style="display: inline; width: 100%;">
                                         {% for tag in post.tags[0:3] %}
                                             <a class="btn btn-sm badge badge-custom me-1 mb-2" style="font-size: xx-small;">{{ tag }}</a>
                                         {% endfor %}
                                         {% if post.desc|length > 30 %}
-                                            <p class="card-text mb-3" style="font-size: small;">{{ post.desc[0:30] }}...</p>
+                                            <p class="card-text card-post-desc-custom mb-3" style="font-size: small;">{{ post.desc[0:30] }}...</p>
                                         {% else %}
-                                            <p class="card-text mb-3" style="font-size: small;">{{ post.desc }}</p>
+                                            <p class="card-text card-post-desc-custom mb-3" style="font-size: small;">{{ post.desc }}</p>
                                         {% endif %}
                                     </div>
                                     <a class="btn btn-sm btn-orange-custom" href="#" style="position: absolute; right: 10px; bottom: 10px;">
@@ -193,7 +214,7 @@
                     <div class="card-body">
                         <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-graph-up-arrow me-2"></i>Trending</h5>
                         {% if user.trending_count == 0 %}
-                            <p class="card-text text-body-secondary text-center">No trending posts</p>
+                            <p class="card-text text-body-secondary text-center" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-semi-bold);">No trending posts</p>
                         {% else %}
                             {% for i in range(user.trending_count) %}
                                 <a href="#" style="text-decoration: none;">
@@ -208,14 +229,14 @@
                                             <div class="col-md-8">
                                                 <div class="card-body">
                                                     {% if user.trending[i].name|length > 20 %}
-                                                        <h6 class="card-title">{{ user.trending[i].name[0:20] }}...</h6>
+                                                        <h6 class="card-title" style="font-family: var(--secondary-font-family);">{{ user.trending[i].name[0:20] }}...</h6>
                                                     {% else %}
-                                                        <h6 class="card-title">{{ user.trending[i].name }}</h6>
+                                                        <h6 class="card-title" style="font-family: var(--secondary-font-family);">{{ user.trending[i].name }}</h6>
                                                     {% endif %}
                                                     {% if user.trending[i].place|length > 20 %}
-                                                        <p class="card-text"><small class="text-body-secondary">{{ user.trending[i].place[0:20] }}...</small></p>
+                                                        <p class="card-text"><small class="text-body-secondary" style="font-family: var(--secondary-font-family);">{{ user.trending[i].place[0:20] }}...</small></p>
                                                     {% else %}
-                                                        <p class="card-text"><small class="text-body-secondary">{{ user.trending[i].place }}</small></p>
+                                                        <p class="card-text"><small class="text-body-secondary" style="font-family: var(--secondary-font-family);">{{ user.trending[i].place }}</small></p>
                                                     {% endif %}
                                                 </div>
                                             </div>
@@ -231,32 +252,57 @@
                     <div class="card-body">
                         <h5 class="card-title mb-3" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-medium); color: var(--secondary-light);"><i class="bi bi-clock-history me-2"></i>Recent Searches</h5>
                         {% if user.recent_searches_count == 0 %}
-                            <p class="card-text text-body-secondary text-center">No recent searches</p>
+                            <p class="card-text text-body-secondary text-center" style="font-family: var(--secondary-font-family); font-weight: var(--font-weight-semi-bold);">No recent searches</p>
                         {% else %}
                             {% for i in range(user.recent_searches_count) %}
-                                <a href="#" style="text-decoration: none;">
-                                    <div class="card mb-3 mx-1 card-post-custom" style="border: none; background-color: var(--primary-dark);">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="{{ url_for('static', path=user.recent_searches[i].img) }}" class="img-fluid rounded-start" alt="Recent Search Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    {% if user.recent_searches[i].name|length > 20 %}
-                                                        <h6 class="card-title">{{ user.recent_searches[i].name[0:20] }}...</h6>
+                                {% if "vc/" in user.recent_searches[i].name %}
+                                    <a href="#" style="text-decoration: none;">
+                                        <div class="card mb-3 mx-1 card-post-custom rounded-pill" style="border: none; background-color: var(--primary-dark);">
+                                            <div class="row g-0">
+                                                <div class="col-md-3">
+                                                    {% if user.recent_searches[i].img %}
+                                                        <img src="{{ url_for('static', path=user.recent_searches[i].img) }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
                                                     {% else %}
-                                                        <h6 class="card-title">{{ user.recent_searches[i].name }}</h6>
+                                                        <img src="{{ url_for('static', path='img/vclogo-white.svg') }}" class="img-fluid rounded-circle" alt="Followed Community Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
                                                     {% endif %}
-                                                    {% if user.recent_searches[i].place|length > 20 %}
-                                                        <p class="card-text"><small class="text-body-secondary">{{ user.recent_searches[i].place[0:20] }}...</small></p>
-                                                    {% else %}
-                                                        <p class="card-text"><small class="text-body-secondary">{{ user.recent_searches[i].place }}</small></p>
-                                                    {% endif %}
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        {% if user.recent_searches[i].name|length > 10 %}
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name[0:10] }}...</h6>
+                                                        {% else %}
+                                                            <h6 class="card-title mb-0" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name }}</h6>
+                                                        {% endif %}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                {% else %}
+                                    <a href="#" style="text-decoration: none;">
+                                        <div class="card mb-3 mx-1 card-post-custom" style="border: none; background-color: var(--primary-dark);">
+                                            <div class="row g-0">
+                                                <div class="col-md-4">
+                                                    <img src="{{ url_for('static', path=user.recent_searches[i].img) }}" class="img-fluid rounded-start" alt="Recent Search Image" style="min-height: 100%; min-width: 100%; object-fit: cover;">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        {% if user.recent_searches[i].name|length > 20 %}
+                                                            <h6 class="card-title" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name[0:20] }}...</h6>
+                                                        {% else %}
+                                                            <h6 class="card-title" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].name }}</h6>
+                                                        {% endif %}
+                                                        {% if user.recent_searches[i].place|length > 20 %}
+                                                            <p class="card-text"><small class="text-body-secondary" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].place[0:20] }}...</small></p>
+                                                        {% else %}
+                                                            <p class="card-text"><small class="text-body-secondary" style="font-family: var(--secondary-font-family);">{{ user.recent_searches[i].place }}</small></p>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endif %}
                             {% endfor %}
                         {% endif %}
                     </div>
